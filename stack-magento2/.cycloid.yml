@@ -1,7 +1,7 @@
 # Configuration of the CI pipeline
 name: 'Stack Magento2'
 canonical: 'stack-magento2'
-description: 'Description of the stack magento2'
+description: 'A stack with a single pipeline using config version 1'
 keywords:
   - 'stack'
   - 'public'
