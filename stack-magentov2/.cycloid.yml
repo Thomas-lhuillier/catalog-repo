@@ -2,12 +2,12 @@
 version: 'v2'
 name: 'Stack Magento'
 canonical: 'stack-magento-v2'
-description: 'Description of the stack magento'
+description: 'A stack with 2 pipelines'
 keywords:
   - 'stack'
   - 'public'
 author: 'gaelL'
-image: 'https://raw.githubusercontent.com/cycloid/test-psc/stack-magento/master/icon.png'
+image: 'https://www.freeiconspng.com/uploads/troll-face-png-9.png'
 type: 'stack'
 config:
   first-usecase:
