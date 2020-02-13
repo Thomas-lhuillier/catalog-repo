@@ -11,6 +11,8 @@ image: 'https://www.freeiconspng.com/uploads/troll-face-png-9.png'
 type: 'stack'
 config:
   first-usecase:
+    name: 'First pipeline'
+    description: 'This is a pipeline description, necessary to let the user which pipeline to use.'
     pipeline:
       pipeline:
         path: 'pipeline/first/magento.yml'
