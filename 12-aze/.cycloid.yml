@@ -17,3 +17,7 @@ config:
       path: pipeline/terraform-pipeline.yaml
     variables:
       path: pipeline/variables.sample.yaml
+  terraform:
+    12-aze:
+      destination: ($ project $)/terraform/($ environment $)/12-aze.tf
+      path: terraform/12-aze.tf.sample
