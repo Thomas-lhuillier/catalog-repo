@@ -31,6 +31,8 @@ config:
         path: 'terraform/first/magento.tf.sample'
         destination: 'terraform/first/magento/($ environment $)/magento.tf'
   second-usecase:
+    name: 'Second pipeline'
+    description: 'This is another pipeline description, necessary to let the user which pipeline to use.'
     pipeline:
       pipeline:
         path: 'pipeline/second/magento.yml'
