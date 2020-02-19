@@ -18,6 +18,10 @@
   "token" = "pixel"
 }
 
+"resource" "flexibleengine_compute_instance_v2" "meh" {
+  "name" = "meh"
+}
+
 "variable" "env" {
   "default" = "[PLACEHOLDER]"
 
