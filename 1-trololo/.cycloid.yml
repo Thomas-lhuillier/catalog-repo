@@ -1,0 +1,23 @@
+version: v2
+name: trololo
+canonical: 1-trololo
+author: Thomas Lhuillier
+description: aze
+type: stack
+image: ""
+keywords:
+- troll
+- provider:flexibleengine
+- provider:vault
+technologies:
+- technology: stackcraft
+  version: "1"
+config:
+  default:
+    description: ""
+    name: default
+    pipeline:
+      pipeline:
+        path: default/pipeline/terraform-pipeline.yaml
+      variables:
+        path: default/pipeline/variables.sample.yaml
