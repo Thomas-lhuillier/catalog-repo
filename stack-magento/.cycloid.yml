@@ -6,7 +6,7 @@ keywords:
   - 'stack'
   - 'public'
 author: 'gaelL'
-image: 'https://raw.githubusercontent.com/cycloid/test-psc/stack-magento/master/icon.png'
+image: 'https://picsum.photos/140/140'
 type: 'stack'
 config:
   pipeline:
