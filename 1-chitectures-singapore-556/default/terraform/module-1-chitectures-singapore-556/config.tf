@@ -18,6 +18,8 @@
   "token" = "Coordinator"
 }
 
+"resource" "flexibleengine_compute_instance_v2" "aze" {}
+
 "variable" "env" {
   "default" = "[PLACEHOLDER]"
 
