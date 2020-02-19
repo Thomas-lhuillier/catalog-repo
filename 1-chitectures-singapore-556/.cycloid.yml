@@ -1,0 +1,31 @@
+version: v2
+name: chitectures-singapore-556
+canonical: 1-chitectures-singapore-556
+author: Thomas Lhuillier
+description: Earum qui reiciendis praesentium et voluptas fuga ut ab. Porro sint ut
+  qui accusantium amet qui. Placeat voluptatibus veniam expedita sunt necessitatibus
+  doloribus tempore vero sint. Sequi quia cupiditate aut officiis eligendi. Explicabo
+  velit quasi est laboriosam. Minus modi veniam vero iusto.
+type: stack
+image: ""
+keywords:
+- turquoise
+- Chilean
+- Peso
+- Unidades
+- de
+- fomento
+- provider:flexibleengine
+- provider:vault
+technologies:
+- technology: stackcraft
+  version: "1"
+config:
+  default:
+    description: ""
+    name: default
+    pipeline:
+      pipeline:
+        path: default/pipeline/terraform-pipeline.yaml
+      variables:
+        path: default/pipeline/variables.sample.yaml
