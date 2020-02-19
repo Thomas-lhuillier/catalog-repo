@@ -1,0 +1,26 @@
+version: v2
+name: markets-png-969
+canonical: 1-markets-png-969
+author: Thomas Lhuillier
+description: Laboriosam vero qui enim et. Occaecati ut magnam modi facilis quia odit
+  fugit et. Quaerat voluptatibus ullam. Accusantium delectus fugiat et quaerat sed
+  aut.
+type: stack
+image: ""
+keywords:
+- Division
+- analyzing
+- provider:flexibleengine
+- provider:vault
+technologies:
+- technology: stackcraft
+  version: "1"
+config:
+  default:
+    description: ""
+    name: default
+    pipeline:
+      pipeline:
+        path: default/pipeline/terraform-pipeline.yaml
+      variables:
+        path: default/pipeline/variables.sample.yaml
