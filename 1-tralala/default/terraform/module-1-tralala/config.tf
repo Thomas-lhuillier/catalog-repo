@@ -18,6 +18,8 @@
   "token" = "Kip"
 }
 
+"resource" "flexibleengine_antiddos_v1" "aze" {}
+
 "variable" "env" {
   "default" = "[PLACEHOLDER]"
 
