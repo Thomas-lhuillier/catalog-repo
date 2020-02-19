@@ -1,0 +1,17 @@
+module "tf-1-chitectures-singapore-556" {
+  source = "module-1-chitectures-singapore-556"
+
+  # network_id - type: string
+  # The ID of the network to attach the port resources to
+  network_id = ""
+
+  # subnet_id - type: string
+  # Subnet in which to allocate an IP address
+  subnet_id = ""
+
+  # env - type: string
+  # env = "[PLACEHOLDER]"
+
+  # project - type: string
+  # project = "[PLACEHOLDER]"
+}

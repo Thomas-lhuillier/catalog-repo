@@ -29,3 +29,7 @@ config:
         path: default/pipeline/terraform-pipeline.yaml
       variables:
         path: default/pipeline/variables.sample.yaml
+    terraform:
+      1-chitectures-singapore-556:
+        destination: ($ project $)/default/terraform/($ environment $)/1-chitectures-singapore-556.tf
+        path: default/terraform/1-chitectures-singapore-556.tf.sample
