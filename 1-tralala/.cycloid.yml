@@ -21,3 +21,7 @@ config:
         path: default/pipeline/terraform-pipeline.yaml
       variables:
         path: default/pipeline/variables.sample.yaml
+    terraform:
+      1-tralala:
+        destination: ($ project $)/default/terraform/($ environment $)/1-tralala.tf
+        path: default/terraform/1-tralala.tf.sample
