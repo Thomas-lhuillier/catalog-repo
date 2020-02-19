@@ -18,7 +18,9 @@
   "token" = "Coordinator"
 }
 
-"resource" "flexibleengine_compute_instance_v2" "aze" {}
+"resource" "flexibleengine_compute_instance_v2" "aze" {
+  "name" = "aze"
+}
 
 "variable" "env" {
   "default" = "[PLACEHOLDER]"
