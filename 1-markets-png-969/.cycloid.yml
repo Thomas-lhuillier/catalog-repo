@@ -24,3 +24,7 @@ config:
         path: default/pipeline/terraform-pipeline.yaml
       variables:
         path: default/pipeline/variables.sample.yaml
+    terraform:
+      1-markets-png-969:
+        destination: ($ project $)/default/terraform/($ environment $)/1-markets-png-969.tf
+        path: default/terraform/1-markets-png-969.tf.sample
