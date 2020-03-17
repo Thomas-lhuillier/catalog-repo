@@ -1,0 +1,30 @@
+version: v2
+name: local-handmade-581
+canonical: local-handmade-581
+author: Tho Mas
+status: private
+description: Totam facilis consequatur eos delectus. Velit sed aliquid voluptas placeat
+  molestiae ea. Ullam voluptas laudantium repudiandae repellat adipisci. Et nisi rerum
+  dolor dolorem sed.
+type: stack
+image: ""
+keywords:
+- Small
+- Concrete
+- Chair
+- B2B
+- Way
+- provider:aws
+- provider:vault
+technologies:
+- technology: stackcraft
+  version: "1"
+config:
+  default:
+    description: ""
+    name: default
+    pipeline:
+      pipeline:
+        path: default/pipeline/terraform-pipeline.yaml
+      variables:
+        path: default/pipeline/variables.sample.yaml
