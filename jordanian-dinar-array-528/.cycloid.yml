@@ -1,0 +1,27 @@
+version: v2
+name: jordanian-dinar-array-528
+canonical: jordanian-dinar-array-528
+author: Tho Mas
+status: private
+description: Voluptatem soluta occaecati libero aut. Sit illum nihil accusamus. Architecto
+  doloremque fugiat quisquam et quos. Sed omnis ut.
+type: stack
+image: ""
+keywords:
+- Profound
+- system
+- orange
+- provider:aws
+- provider:vault
+technologies:
+- technology: stackcraft
+  version: "1"
+config:
+  default:
+    description: ""
+    name: default
+    pipeline:
+      pipeline:
+        path: default/pipeline/terraform-pipeline.yaml
+      variables:
+        path: default/pipeline/variables.sample.yaml
