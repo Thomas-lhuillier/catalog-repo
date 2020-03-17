@@ -22,3 +22,7 @@ config:
         path: default/pipeline/terraform-pipeline.yaml
       variables:
         path: default/pipeline/variables.sample.yaml
+    terraform:
+      test-tlh:
+        destination: ($ project $)/default/terraform/($ environment $)/test-tlh.tf
+        path: default/terraform/test-tlh.tf.sample
