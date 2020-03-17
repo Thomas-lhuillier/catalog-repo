@@ -1,0 +1,23 @@
+version: v2
+name: tlh-test
+canonical: 12-tlh-test
+author: Thomas lhuillier
+description: no idea what it does
+type: stack
+image: ""
+keywords:
+- meh
+- provider:aws
+- provider:vault
+technologies:
+- technology: stackcraft
+  version: "1"
+config:
+  default:
+    description: ""
+    name: default
+    pipeline:
+      pipeline:
+        path: default/pipeline/terraform-pipeline.yaml
+      variables:
+        path: default/pipeline/variables.sample.yaml
