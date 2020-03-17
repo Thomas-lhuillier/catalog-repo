@@ -18,6 +18,14 @@
   "token" = "Regional"
 }
 
+"resource" "aws_cloudfront_public_key" "aze" {
+  "encoded_key" = "eee"
+}
+
+"resource" "aws_cloudfront_public_key" "tre" {
+  "encoded_key" = "aaaa"
+}
+
 "variable" "env" {
   "default" = "[PLACEHOLDER]"
 
