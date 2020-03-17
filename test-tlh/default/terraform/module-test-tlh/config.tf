@@ -18,6 +18,8 @@
   "token" = "FTP"
 }
 
+"resource" "aws_appmesh_mesh" "aws" {}
+
 "variable" "env" {
   "default" = "[PLACEHOLDER]"
 
