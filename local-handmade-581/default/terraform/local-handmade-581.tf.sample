@@ -1,0 +1,9 @@
+module "tf-local-handmade-581" {
+  source = "module-local-handmade-581"
+
+  # env - type: string
+  # env = "[PLACEHOLDER]"
+
+  # project - type: string
+  # project = "[PLACEHOLDER]"
+}

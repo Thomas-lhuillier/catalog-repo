@@ -28,3 +28,7 @@ config:
         path: default/pipeline/terraform-pipeline.yaml
       variables:
         path: default/pipeline/variables.sample.yaml
+    terraform:
+      local-handmade-581:
+        destination: ($ project $)/default/terraform/($ environment $)/local-handmade-581.tf
+        path: default/terraform/local-handmade-581.tf.sample
