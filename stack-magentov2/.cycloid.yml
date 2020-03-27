@@ -1,5 +1,5 @@
 # Configuration of the CI pipeline
-version: 'v2'
+version: '2'
 name: 'Stack Magento'
 canonical: 'stack-magento-v2'
 description: 'A stack with 2 pipelines'
