@@ -1,9 +1,0 @@
-module "tf-test-tlh" {
-  source = "module-test-tlh"
-
-  # env - type: string
-  # env = "[PLACEHOLDER]"
-
-  # project - type: string
-  # project = "[PLACEHOLDER]"
-}

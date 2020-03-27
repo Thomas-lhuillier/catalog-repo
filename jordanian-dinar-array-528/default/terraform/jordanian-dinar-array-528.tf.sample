@@ -1,9 +1,0 @@
-module "tf-jordanian-dinar-array-528" {
-  source = "module-jordanian-dinar-array-528"
-
-  # env - type: string
-  # env = "[PLACEHOLDER]"
-
-  # project - type: string
-  # project = "[PLACEHOLDER]"
-}
