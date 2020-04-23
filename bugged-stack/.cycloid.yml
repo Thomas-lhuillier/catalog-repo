@@ -1,0 +1,21 @@
+# Configuration of the CI pipeline
+version: '2'
+name: 'Bugged stack'
+canonical: 'bugged-stack-tl'
+description: 'A stack with errors'
+keywords:
+  - 'stack'
+  - 'public'
+  - 'bugged'
+author: 'TLH'
+image: 'https://image.flaticon.com/icons/svg/269/269064.svg'
+type: 'stack'
+config:
+  default:
+    name: 'Default pipeline'
+    description: 'This is a pipeline description, necessary to let the user which pipeline to use.'
+    pipeline:
+      pipeline:
+        path: 'pipeline/default/test.yml'
+      variables:
+        path: 'pipeline/default/variables.sample.yml'
