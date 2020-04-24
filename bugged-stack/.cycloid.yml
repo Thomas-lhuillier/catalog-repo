@@ -19,3 +19,5 @@ config:
         path: 'pipeline/default/test.yml'
       variables:
         path: 'pipeline/default/variables.sample.yml'
+      empty:
+        path: 'pipeline/default/empty.yml'
