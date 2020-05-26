@@ -1,0 +1,9 @@
+module "tf-tl-test-ref" {
+  source = "module-tl-test-ref"
+
+  # env - type: string
+  # env = "[PLACEHOLDER]"
+
+  # project - type: string
+  # project = "[PLACEHOLDER]"
+}

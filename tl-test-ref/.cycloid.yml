@@ -22,3 +22,7 @@ config:
       variables:
         destination: ($ project $)/pipeline/variables-($ environment $).yml
         path: default/pipeline/variables.sample.yaml
+    terraform:
+      tl-test-ref:
+        destination: ($ project $)/default/terraform/($ environment $)/tl-test-ref.tf
+        path: default/terraform/tl-test-ref.tf.sample
