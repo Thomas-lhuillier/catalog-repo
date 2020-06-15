@@ -75,3 +75,19 @@ default:
         description: "The path in which the config will be saved"
         default: "cycloid-wordpress-demo/terraform"
         required: false
+  terraform:
+    AWS:
+      - name: "Default Region"
+        key: aws_default_region
+        type: string
+        widget: dropdown
+        description: "In which region you would like your project to run"
+        default: "eu-west-1"
+        values: ["eu-west-1", "eu-west-2", "eu-west3", "eu-south1", "eu-north1", "eu-central1"]
+        required: false
+      - name: "S3 Bucket"
+        key: terraform_storage_bucket_name
+        type: string
+        widget: simple_text
+        description: "The S3 bucket where terraform will store its tfstate"
+        required: true
