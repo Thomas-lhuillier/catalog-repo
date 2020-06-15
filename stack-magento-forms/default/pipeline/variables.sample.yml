@@ -1,0 +1,41 @@
+env: ($ environment $)
+magento_deploy_bucket_name: magento-deploy
+magento_deploy_bucket_object_path: /catalog-magento/($ environment $)/magento.tar.gz
+magento_deploy_bucket_region: eu-west-1
+magento_deploy_bucket_access_key: ...
+magento_deploy_bucket_secret_access_key: ...
+terraform_storage_access_key: ...
+terraform_storage_secret_key: ...
+terraform_storage_bucket_path: magento/($ environment $)
+aws_access_key: ...
+aws_secret_key: ...
+
+ansible_vault_password: ...
+bastion_url: admin@bastion.cycloid.io
+bastion_private_key_pair: |-
+  -----BEGIN RSA PRIVATE KEY-----
+  -----END RSA PRIVATE KEY-----
+
+magento_git_repository: git@github.com:MyUser/code-magento.git
+magento_git_branch: master
+magento_git_private_key: |-
+  -----BEGIN RSA PRIVATE KEY-----
+  -----END RSA PRIVATE KEY-----
+
+
+magento_config_git_repository: git@github.com:MyUser/config-magento.git
+magento_config_git_branch: master
+magento_config_git_private_key: |-
+  -----BEGIN RSA PRIVATE KEY-----
+  -----END RSA PRIVATE KEY-----
+
+aws_default_region: eu-west-1
+terraform_storage_bucket_name: "($ organization_canonical $)-terraform-remote-state"
+sc_repository: "git@github.com:cycloidio/cycloid-stacks-test.git"
+sc_git_key: "((git_readonly.ssh_key))"
+sc_path: "8-wordpress-demo"
+sc_branch: "stacks"
+config_git_repository: "git@github.com:cycloidio/cycloid-stacks-test.git"
+config_git_key: "((git_readonly.ssh_key))"
+config_git_branch: "config"
+config_terraform_path: "cycloid-wordpress-demo/terraform"
