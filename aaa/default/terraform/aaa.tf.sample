@@ -1,0 +1,9 @@
+module "tf-aaa" {
+  source = "module-aaa"
+
+  # env - type: string
+  # env = "[PLACEHOLDER]"
+
+  # project - type: string
+  # project = "[PLACEHOLDER]"
+}
