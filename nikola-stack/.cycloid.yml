@@ -1,0 +1,31 @@
+version: "2"
+name: nikola-stack
+canonical: nikola-stack
+author: Nikola Savanovic
+status: private
+description: Stack testing
+image: ""
+keywords:
+- stack
+- dummy
+- test
+- provider:aws
+- provider:vault
+technologies:
+- technology: stackcraft
+  version: "1"
+dependencies:
+- ref: seraf:stack-dummy
+  required: true
+- ref: seraf:dan_stack
+  required: true
+config:
+  default:
+    description: ""
+    name: default
+    pipeline:
+      pipeline:
+        path: default/pipeline/terraform-pipeline.yaml
+      variables:
+        destination: ($ project $)/pipeline/variables-($ environment $).yml
+        path: default/pipeline/variables.sample.yaml
