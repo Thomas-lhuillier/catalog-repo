@@ -29,3 +29,7 @@ config:
       variables:
         destination: ($ project $)/pipeline/variables-($ environment $).yml
         path: default/pipeline/variables.sample.yaml
+    terraform:
+      nikola-stack:
+        destination: ($ project $)/default/terraform/($ environment $)/nikola-stack.tf
+        path: default/terraform/nikola-stack.tf.sample
