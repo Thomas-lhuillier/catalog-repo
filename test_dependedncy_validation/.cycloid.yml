@@ -32,3 +32,7 @@ config:
       variables:
         destination: ($ project $)/pipeline/variables-($ environment $).yml
         path: default/pipeline/variables.sample.yaml
+    terraform:
+      test_dependedncy_validation:
+        destination: ($ project $)/default/terraform/($ environment $)/test_dependedncy_validation.tf
+        path: default/terraform/test_dependedncy_validation.tf.sample
