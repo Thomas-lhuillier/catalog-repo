@@ -1,0 +1,27 @@
+version: "2"
+name: to be deleted
+canonical: to_be_deleted
+author: Nikola Savanovic
+status: private
+description: asdfasdf
+image: ""
+keywords:
+- no-stack
+- provider:aws
+- provider:vault
+technologies:
+- technology: stackcraft
+  version: "1"
+dependencies:
+- ref: stack:test-it
+  required: true
+config:
+  default:
+    description: ""
+    name: default
+    pipeline:
+      pipeline:
+        path: default/pipeline/terraform-pipeline.yaml
+      variables:
+        destination: ($ project $)/pipeline/variables-($ environment $).yml
+        path: default/pipeline/variables.sample.yaml
