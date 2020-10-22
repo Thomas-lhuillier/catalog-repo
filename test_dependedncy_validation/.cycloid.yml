@@ -1,0 +1,34 @@
+version: "2"
+name: test dependedncy validation
+canonical: test_dependedncy_validation
+author: Nikola Savanovic
+status: private
+description: To be able to test stack dependency validation correctly, either create your own stack or use this one to deploy
+image: ""
+keywords:
+- test case
+- validation
+- provider:aws
+- provider:vault
+technologies:
+- technology: stackcraft
+  version: "1"
+dependencies:
+- ref: test:test-1
+  required: true
+- ref: test:test-2
+  required: true
+- ref: test:test-3
+  required: true
+- ref: test:test-4
+  required: true
+config:
+  default:
+    description: ""
+    name: default
+    pipeline:
+      pipeline:
+        path: default/pipeline/terraform-pipeline.yaml
+      variables:
+        destination: ($ project $)/pipeline/variables-($ environment $).yml
+        path: default/pipeline/variables.sample.yaml
