@@ -1,0 +1,9 @@
+module "tf-to_be_deleted" {
+  source = "module-to_be_deleted"
+
+  # env - type: string
+  # env = "[PLACEHOLDER]"
+
+  # project - type: string
+  # project = "[PLACEHOLDER]"
+}
