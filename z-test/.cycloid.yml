@@ -23,3 +23,7 @@ config:
       variables:
         destination: ($ project $)/pipeline/variables-($ environment $).yml
         path: default/pipeline/variables.sample.yaml
+    terraform:
+      z-test:
+        destination: ($ project $)/default/terraform/($ environment $)/z-test.tf
+        path: default/terraform/z-test.tf.sample
