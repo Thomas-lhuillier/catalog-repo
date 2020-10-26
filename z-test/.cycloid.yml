@@ -1,0 +1,25 @@
+version: "2"
+name: z-test
+canonical: z-test
+author: Thomas lhuillier
+status: private
+description: test
+image: ""
+keywords:
+- test
+- provider:aws
+- provider:vault
+technologies:
+- technology: stackcraft
+  version: "1"
+dependencies: []
+config:
+  default:
+    description: ""
+    name: default
+    pipeline:
+      pipeline:
+        path: default/pipeline/terraform-pipeline.yaml
+      variables:
+        destination: ($ project $)/pipeline/variables-($ environment $).yml
+        path: default/pipeline/variables.sample.yaml
