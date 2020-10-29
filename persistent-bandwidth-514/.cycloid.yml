@@ -1,0 +1,26 @@
+version: "2"
+name: persistent-bandwidth-514
+canonical: persistent-bandwidth-514
+author: tho mas
+status: private
+description: Omnis qui rem recusandae soluta iusto et. Aut ut libero dolorem cumque repudiandae odio velit aperiam. Quo reiciendis officia qui placeat velit. In vitae et laborum. Molestias sunt vel laudantium qui quia aut molestiae tempora. Veritatis facilis nobis non ea maxime itaque eos ratione et.
+image: ""
+keywords:
+- Card
+- systematic
+- provider:aws
+- provider:vault
+technologies:
+- technology: stackcraft
+  version: "1"
+dependencies: []
+config:
+  default:
+    description: ""
+    name: default
+    pipeline:
+      pipeline:
+        path: default/pipeline/terraform-pipeline.yaml
+      variables:
+        destination: ($ project $)/pipeline/variables-($ environment $).yml
+        path: default/pipeline/variables.sample.yaml
