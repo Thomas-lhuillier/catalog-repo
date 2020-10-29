@@ -24,3 +24,7 @@ config:
       variables:
         destination: ($ project $)/pipeline/variables-($ environment $).yml
         path: default/pipeline/variables.sample.yaml
+    terraform:
+      persistent-bandwidth-514:
+        destination: ($ project $)/default/terraform/($ environment $)/persistent-bandwidth-514.tf
+        path: default/terraform/persistent-bandwidth-514.tf.sample
