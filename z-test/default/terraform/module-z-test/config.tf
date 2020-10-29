@@ -9,13 +9,13 @@
 }
 
 "provider" "aws" {
-  "region" = "morph"
+  "region" = "aze"
 }
 
 "provider" "vault" {
-  "address" = "compelling"
+  "address" = "aze"
 
-  "token" = "Kwacha"
+  "token" = "aze"
 }
 
 "variable" "env" {
