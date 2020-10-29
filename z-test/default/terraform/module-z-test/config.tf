@@ -18,6 +18,8 @@
   "token" = "aze"
 }
 
+"resource" "aws_api_gateway_account" "aze" {}
+
 "variable" "env" {
   "default" = "[PLACEHOLDER]"
 
