@@ -13,6 +13,7 @@ config:
   first-usecase:
     name: 'First pipeline'
     description: 'This is a pipeline description, necessary to let the user which pipeline to use.'
+    cloud_provider: 'aws'
     pipeline:
       pipeline:
         path: 'pipeline/first/magento.yml'
@@ -38,6 +39,7 @@ config:
   second-usecase:
     name: 'Second pipeline'
     description: 'This is another pipeline description, necessary to let the user which pipeline to use.'
+    cloud_provider: 'google'
     pipeline:
       pipeline:
         path: 'pipeline/second/magento.yml'
