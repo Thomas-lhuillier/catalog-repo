@@ -57,3 +57,66 @@ config:
       magento:
         path: 'terraform/second/magento.tf.sample'
         destination: '($ project $)/second/terraform/magento/($ environment $)/magento.tf'
+  third-usecase:
+    name: 'another google provider'
+    description: 'This is another pipeline description, necessary to let the user which pipeline to use.'
+    cloud_provider: 'google'
+    pipeline:
+      pipeline:
+        path: 'pipeline/second/magento.yml'
+      variables:
+        path: 'pipeline/second/variables.sample.yml'
+
+    # Configuration of ansible for provisionning
+    ansible:
+      magento:
+        path: 'ansible/second/environments/front.yml.sample'
+        destination: '($ project $)/second/ansible/environments/($ environment $)-front.yml'
+
+    # Configuration of terraform to setup the infrastructure
+    terraform:
+      magento:
+        path: 'terraform/second/magento.tf.sample'
+        destination: '($ project $)/second/terraform/magento/($ environment $)/magento.tf'
+  fourth-usecase:
+    name: 'unknown provider'
+    description: 'This is another pipeline description, necessary to let the user which pipeline to use.'
+    cloud_provider: 'unknown'
+    pipeline:
+      pipeline:
+        path: 'pipeline/second/magento.yml'
+      variables:
+        path: 'pipeline/second/variables.sample.yml'
+
+    # Configuration of ansible for provisionning
+    ansible:
+      magento:
+        path: 'ansible/second/environments/front.yml.sample'
+        destination: '($ project $)/second/ansible/environments/($ environment $)-front.yml'
+
+    # Configuration of terraform to setup the infrastructure
+    terraform:
+      magento:
+        path: 'terraform/second/magento.tf.sample'
+        destination: '($ project $)/second/terraform/magento/($ environment $)/magento.tf'
+        
+  fifth-usecase:
+    name: 'No provider'
+    description: 'This is another pipeline description, necessary to let the user which pipeline to use.'
+    pipeline:
+      pipeline:
+        path: 'pipeline/second/magento.yml'
+      variables:
+        path: 'pipeline/second/variables.sample.yml'
+
+    # Configuration of ansible for provisionning
+    ansible:
+      magento:
+        path: 'ansible/second/environments/front.yml.sample'
+        destination: '($ project $)/second/ansible/environments/($ environment $)-front.yml'
+
+    # Configuration of terraform to setup the infrastructure
+    terraform:
+      magento:
+        path: 'terraform/second/magento.tf.sample'
+        destination: '($ project $)/second/terraform/magento/($ environment $)/magento.tf'
