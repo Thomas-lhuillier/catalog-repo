@@ -1,0 +1,30 @@
+---
+version: '2'
+# Configuration of the Cycloid stack
+name: 'Dummy stack'
+canonical: 'tl-stack-dummy'
+status: 'public'
+description: |
+  This stack is a dummy stack which contain only a hello world pipeline.
+keywords:
+  - 'concourse'
+  - 'dummy'
+author: 'Cycloid | Thomas'
+image: |
+  https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ24fdonx171ZNyuPDty7fjVfnr1pN7qMbh5w&usqp=CAU
+technologies:
+  - technology: concourse
+    version: n/a
+  - technology: busybox
+    version: n/a
+
+config:
+  default:
+    name: 'Default'
+    description: 'Default pipeline usecase'
+    pipeline:
+      pipeline:
+        path: 'pipeline/pipeline.yml'
+      variables:
+        path: 'pipeline/variables.sample.yml'
+        destination: '($ project $)/pipeline/variables-($ environment $).yml'
