@@ -1,6 +1,6 @@
 jobs:
 - name: job-hello-world
-  build_logs_to_retain: 3
+  build_logs_to_retain: 50
   plan:
   - task: hello-world
     config:
