@@ -1,72 +1,132 @@
+resources:
+  - name: dummy
+    type: dummy
+    source: null
+resource_types:
+  - name: dummy
+    type: docker-image
+    source:
+      repository: ktrysmt/concourse-dummy-resource
 jobs:
   - name: job-hello-world
-    build_logs_to_retain: 50
+    build_logs_to_retain: 10
     plan:
-      - task: random-failing
-        config:
+      - put: dummy
+        tags:
+          - thomas
+      - config:
           platform: linux
           image_resource:
             type: docker-image
-            source: {repository: busybox}
+            source:
+              repository: busybox
           run:
             path: /bin/sh
             args:
-            - -ec
-            - |
-              echo done
-              exit $(($RANDOM%2))
+              - '-ec'
+              - |
+                for fg in 30 31 32 33 34 35 36 37 ; do
+                  fgbright=`expr $fg + 60`
+                  bg=`expr $fg + 10`
+                  bgbright=`expr $fg + 70`
+                  printf "\033[${bg}m    \033[${bgbright}m    \033[0m   \033[${fg}m... base \033[${fgbright}m... bright \033[0m\n"
+                done
+
+                if [ `expr $RANDOM % 2` -eq 0 ]; then
+                  printf "\n\033[41;30m  ERROR  \033[0m"
+                  exit 1
+                else
+                  printf "\n\033[42;30m  SUCCESS  \033[0m"
+                fi
+        tags:
+          - thomas
+        task: random-failing
       - in_parallel:
-        - task: random-failing
-          config:
-            platform: linux
-            image_resource:
-              type: docker-image
-              source: {repository: busybox}
-            run:
-              path: /bin/sh
-              args:
-              - -ec
-              - |
-                echo done
-                exit $(($RANDOM%2))
-        - task: random-failing
-          config:
-            platform: linux
-            image_resource:
-              type: docker-image
-              source: {repository: busybox}
-            run:
-              path: /bin/sh
-              args:
-              - -ec
-              - |
-                echo done
-                exit $(($RANDOM%2))
+          steps:
+            - config:
+                platform: linux
+                image_resource:
+                  type: docker-image
+                  source:
+                    repository: busybox
+                run:
+                  path: /bin/sh
+                  args:
+                    - '-ec'
+                    - |
+                      printf "\n\033[42;30m  SUCCESS  \033[0m in parallel A"
+              on_success:
+                put: dummy
+                tags:
+                  - thomas
+              tags:
+                - thomas
+              task: in-parallel-a
+            - config:
+                platform: linux
+                image_resource:
+                  type: docker-image
+                  source:
+                    repository: busybox
+                run:
+                  path: /bin/sh
+                  args:
+                    - '-ec'
+                    - |
+                      printf "\n\033[42;30m  SUCCESS 1  \033[0m in parallel B"
+              on_success:
+                put: dummy
+                tags:
+                  - thomas
+              tags:
+                - thomas
+              task: in-parallel-b
       - do:
-        - task: random-failing
-          config:
-            platform: linux
-            image_resource:
-              type: docker-image
-              source: {repository: busybox}
-            run:
-              path: /bin/sh
-              args:
-              - -ec
-              - |
-                echo done
-                exit $(($RANDOM%2))
+          - config:
+              platform: linux
+              image_resource:
+                type: docker-image
+                source:
+                  repository: busybox
+              run:
+                path: /bin/sh
+                args:
+                  - '-ec'
+                  - |
+                    printf "\n\033[42;30m  SUCCESS  \033[0m do block"
+            tags:
+              - thomas
+            task: do
       - try:
-          task: random-failing
           config:
             platform: linux
             image_resource:
               type: docker-image
-              source: {repository: busybox}
+              source:
+                repository: busybox
             run:
               path: /bin/sh
               args:
-              - -ec
-              - |
-                echo done
-                exit $(($RANDOM%2))
+                - '-ec'
+                - |
+                  printf "\n\033[41;30m  ERROR  \033[0m"
+                  exit 1
+          on_failure:
+            do:
+              - put: dummy
+                tags:
+                  - thomas
+              - put: dummy
+                tags:
+                  - thomas
+          on_success:
+            do:
+              - put: dummy
+                tags:
+                  - thomas
+              - put: dummy
+                tags:
+                  - thomas
+          tags:
+            - thomas
+          task: try
