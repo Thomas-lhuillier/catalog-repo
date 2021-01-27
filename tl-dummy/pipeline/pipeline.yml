@@ -68,7 +68,7 @@ jobs:
                 echo done
                 exit $(($RANDOM%2))
       - try:
-        - task: random-failing
+          task: random-failing
           config:
             platform: linux
             image_resource:
