@@ -29,18 +29,18 @@ jobs:
   - in_parallel:
     - do:
       - task: random-failing
-      config:
-        platform: linux
-        image_resource:
-          type: docker-image
-          source: {repository: busybox}
-        run:
-          path: /bin/sh
-          args:
-          - -ec
-          - |
-            echo done
-            exit $(($RANDOM%2))
+        config:
+          platform: linux
+          image_resource:
+            type: docker-image
+            source: {repository: busybox}
+          run:
+            path: /bin/sh
+            args:
+            - -ec
+            - |
+              echo done
+              exit $(($RANDOM%2))
       - try:
         - task: random-failing
           config:
