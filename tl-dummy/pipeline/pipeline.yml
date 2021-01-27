@@ -1,18 +1,7 @@
-resources:
-  - name: git-source-code
-    type: git
-    icon: github
-    source:
-      disable_ci_skip: false
-      uri: https://github.com/Thomas-lhuillier/test-repo-trigger-ci.git
-      branch: master
-
 jobs:
   - name: job-hello-world
     build_logs_to_retain: 50
     plan:
-      - get: git-source-code
-        trigger: true
       - task: random-failing
         config:
           platform: linux
