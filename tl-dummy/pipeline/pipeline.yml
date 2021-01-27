@@ -8,66 +8,11 @@ resources:
       branch: master
 
 jobs:
-- name: job-hello-world
-  build_logs_to_retain: 50
-  plan:
-  - get: git-source-code
-    trigger: true
-  - task: random-failing
-    config:
-      platform: linux
-      image_resource:
-        type: docker-image
-        source: {repository: busybox}
-      run:
-        path: /bin/sh
-        args:
-        - -ec
-        - |
-          echo done
-          exit $(($RANDOM%2))
-  - do:
-    - task: random-failing
-      config:
-        platform: linux
-        image_resource:
-          type: docker-image
-          source: {repository: busybox}
-        run:
-          path: /bin/sh
-          args:
-          - -ec
-          - |
-            echo done
-            exit $(($RANDOM%2))
-  - in_parallel:
-    - task: random-failing
-      config:
-        platform: linux
-        image_resource:
-          type: docker-image
-          source: {repository: busybox}
-        run:
-          path: /bin/sh
-          args:
-          - -ec
-          - |
-            echo done
-            exit $(($RANDOM%2))
-    - task: random-failing
-      config:
-        platform: linux
-        image_resource:
-          type: docker-image
-          source: {repository: busybox}
-        run:
-          path: /bin/sh
-          args:
-          - -ec
-          - |
-            echo done
-            exit $(($RANDOM%2))
-    - try:
+  - name: job-hello-world
+    build_logs_to_retain: 50
+    plan:
+      - get: git-source-code
+        trigger: true
       - task: random-failing
         config:
           platform: linux
@@ -81,3 +26,58 @@ jobs:
             - |
               echo done
               exit $(($RANDOM%2))
+      - in_parallel:
+        - task: random-failing
+          config:
+            platform: linux
+            image_resource:
+              type: docker-image
+              source: {repository: busybox}
+            run:
+              path: /bin/sh
+              args:
+              - -ec
+              - |
+                echo done
+                exit $(($RANDOM%2))
+        - task: random-failing
+          config:
+            platform: linux
+            image_resource:
+              type: docker-image
+              source: {repository: busybox}
+            run:
+              path: /bin/sh
+              args:
+              - -ec
+              - |
+                echo done
+                exit $(($RANDOM%2))
+      - do:
+        - task: random-failing
+          config:
+            platform: linux
+            image_resource:
+              type: docker-image
+              source: {repository: busybox}
+            run:
+              path: /bin/sh
+              args:
+              - -ec
+              - |
+                echo done
+                exit $(($RANDOM%2))
+      - try:
+        - task: random-failing
+          config:
+            platform: linux
+            image_resource:
+              type: docker-image
+              source: {repository: busybox}
+            run:
+              path: /bin/sh
+              args:
+              - -ec
+              - |
+                echo done
+                exit $(($RANDOM%2))
