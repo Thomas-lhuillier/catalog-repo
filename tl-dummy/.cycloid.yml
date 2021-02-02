@@ -1,15 +1,15 @@
 ---
 version: '2'
 # Configuration of the Cycloid stack
-name: 'Dummy stack'
+name: 'Debug-fe'
 canonical: 'tl-stack-dummy'
 status: 'public'
 description: |
-  This stack is a dummy stack which contain only a hello world pipeline.
+  This stack is a dummy stack which helps debugging when working on the front-end.
 keywords:
-  - 'concourse'
+  - 'debug'
   - 'dummy'
-author: 'Cycloid | Thomas'
+author: 'Thomas'
 image: |
   https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ24fdonx171ZNyuPDty7fjVfnr1pN7qMbh5w&usqp=CAU
 technologies:
