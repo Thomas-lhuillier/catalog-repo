@@ -21,10 +21,19 @@ technologies:
 config:
   default:
     name: 'Default'
-    description: 'Default pipeline usecase'
+    description: 'Default debug pipeline'
     pipeline:
       pipeline:
         path: 'pipeline/pipeline.yml'
+      variables:
+        path: 'pipeline/variables.sample.yml'
+        destination: '($ project $)/pipeline/variables-($ environment $).yml'
+  worker:
+    name: 'Local worker'
+    description: 'Debug pipeline running on a tagged worker'
+    pipeline:
+      pipeline:
+        path: 'pipeline/pipeline-tagged-worker.yml'
       variables:
         path: 'pipeline/variables.sample.yml'
         destination: '($ project $)/pipeline/variables-($ environment $).yml'
