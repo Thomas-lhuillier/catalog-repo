@@ -1,0 +1,26 @@
+version: "2"
+name: test aws
+canonical: test_aws
+author: Daniele Gazzelloni
+status: private
+description: s
+image: ""
+keywords:
+- test
+- aws
+- provider:aws
+- provider:vault
+technologies:
+- technology: stackcraft
+  version: "1"
+dependencies: []
+config:
+  default:
+    description: ""
+    name: default
+    pipeline:
+      pipeline:
+        path: default/pipeline/terraform-pipeline.yaml
+      variables:
+        destination: ($ project $)/pipeline/variables-($ environment $).yml
+        path: default/pipeline/variables.sample.yaml
