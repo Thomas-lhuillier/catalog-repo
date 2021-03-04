@@ -15,5 +15,4 @@ jobs:
           - |
             echo ${MESSAGE}
         params:
-          MESSAGE: ((foo.bar))
-          MESSAGE2: ((foo.bli))
+          MESSAGE: ((foo))
