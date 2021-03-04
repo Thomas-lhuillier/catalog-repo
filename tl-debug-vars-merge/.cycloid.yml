@@ -14,16 +14,16 @@ config:
     name: case-1
     pipeline:
       pipeline:
-        path: case-1/pipeline/pipeline.yaml
+        path: case-1/pipeline/pipeline.yml
       variables:
-        path: case-1/pipeline/variables.sample.yaml
+        path: case-1/pipeline/variables.sample.yml
         destination: ($ project $)/pipeline/variables-($ environment $).yml
   second:
     description: "case 2"
     name: case-2
     pipeline:
       pipeline:
-        path: case-2/pipeline/pipeline.yaml
+        path: case-2/pipeline/pipeline.yml
       variables:
-        path: case-2/pipeline/variables.sample.yaml
+        path: case-2/pipeline/variables.sample.yml
         destination: ($ project $)/pipeline/variables-($ environment $).yml
