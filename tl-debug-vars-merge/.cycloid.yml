@@ -1,0 +1,29 @@
+version: "2"
+name: test merge
+canonical: tl_test_vars_merge
+author: Thomas L'huillier
+status: private
+description: A test stack to debug variable merging
+image: "https://cdn3.iconfinder.com/data/icons/the-missing-version-control-material/100/Merge-512.png"
+keywords:
+- test
+dependencies: []
+config:
+  default:
+    description: "case 1"
+    name: case-1
+    pipeline:
+      pipeline:
+        path: case-1/pipeline/pipeline.yaml
+      variables:
+        path: case-1/pipeline/variables.sample.yaml
+        destination: ($ project $)/pipeline/variables-($ environment $).yml
+  second:
+    description: "case 2"
+    name: case-2
+    pipeline:
+      pipeline:
+        path: case-2/pipeline/pipeline.yaml
+      variables:
+        path: case-2/pipeline/variables.sample.yaml
+        destination: ($ project $)/pipeline/variables-($ environment $).yml
