@@ -30,3 +30,7 @@ config:
       variables:
         destination: ($ project $)/pipeline/variables-($ environment $).yml
         path: default/pipeline/variables.sample.yaml
+    terraform:
+      intuitive-firewall-934:
+        destination: ($ project $)/default/terraform/($ environment $)/intuitive-firewall-934.tf
+        path: default/terraform/intuitive-firewall-934.tf.sample
