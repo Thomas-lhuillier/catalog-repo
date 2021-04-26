@@ -1,0 +1,32 @@
+version: "2"
+name: intuitive-firewall-934
+canonical: intuitive-firewall-934
+author: fake-name-0 surname
+status: private
+description: Ea eum officia itaque quia exercitationem est repellat dolorem. Esse
+  cumque delectus. Cupiditate natus iste aliquid aliquam et saepe voluptatem. Harum
+  facere alias et sunt mollitia saepe eligendi sit in. Ullam debitis quod laudantium
+  qui. Ea consectetur dolores quia.
+image: ""
+keywords:
+- Buckinghamshire
+- input
+- Gloves
+- provider:aws
+- provider:vault
+technologies:
+- technology: stackcraft
+  version: "1"
+dependencies:
+- ref: seraf:infra-amazon-s3
+  required: true
+config:
+  default:
+    description: ""
+    name: default
+    pipeline:
+      pipeline:
+        path: default/pipeline/terraform-pipeline.yaml
+      variables:
+        destination: ($ project $)/pipeline/variables-($ environment $).yml
+        path: default/pipeline/variables.sample.yaml
