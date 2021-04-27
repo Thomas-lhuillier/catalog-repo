@@ -24,3 +24,7 @@ config:
       variables:
         destination: ($ project $)/pipeline/variables-($ environment $).yml
         path: default/pipeline/variables.sample.yaml
+    terraform:
+      sdffs:
+        destination: ($ project $)/default/terraform/($ environment $)/sdffs.tf
+        path: default/terraform/sdffs.tf.sample
