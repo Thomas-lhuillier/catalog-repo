@@ -1,9 +1,0 @@
-module "tf-sdffs" {
-  source = "module-sdffs"
-
-  # env - type: string
-  # env = "[PLACEHOLDER]"
-
-  # project - type: string
-  # project = "[PLACEHOLDER]"
-}

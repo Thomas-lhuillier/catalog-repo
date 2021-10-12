@@ -1,9 +1,0 @@
-module "tf-persistent-bandwidth-514" {
-  source = "module-persistent-bandwidth-514"
-
-  # env - type: string
-  # env = "[PLACEHOLDER]"
-
-  # project - type: string
-  # project = "[PLACEHOLDER]"
-}

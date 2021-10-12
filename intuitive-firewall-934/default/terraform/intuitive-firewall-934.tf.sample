@@ -1,9 +1,0 @@
-module "tf-intuitive-firewall-934" {
-  source = "module-intuitive-firewall-934"
-
-  # env - type: string
-  # env = "[PLACEHOLDER]"
-
-  # project - type: string
-  # project = "[PLACEHOLDER]"
-}
