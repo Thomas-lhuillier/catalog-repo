@@ -3,8 +3,9 @@ name: test dependedncy validation
 canonical: test_dependedncy_validation
 author: Nikola Savanovic
 status: private
-description: To be able to test stack dependency validation correctly, either create your own stack or use this one to deploy
-image: ""
+description: To be able to test stack dependency validation correctly, either create
+  your own stack or use this one to deploy
+image: https://raw.githubusercontent.com/cycloid-community-catalog/stack-hello-world/master/icon.png
 keywords:
 - test case
 - validation
