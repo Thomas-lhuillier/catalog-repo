@@ -1,9 +1,0 @@
-module "tf-test_dependedncy_validation" {
-  source = "module-test_dependedncy_validation"
-
-  # env - type: string
-  # env = "[PLACEHOLDER]"
-
-  # project - type: string
-  # project = "[PLACEHOLDER]"
-}
