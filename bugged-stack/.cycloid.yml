@@ -1,15 +1,16 @@
-# Configuration of the CI pipeline
+---
 version: '2'
+# Configuration of the Cycloid stack
 name: 'Bugged stack'
-canonical: 'bugged-stack-tl'
-description: 'A stack with errors'
+canonical: 'bugged-stack'
+status: 'private'
+description: 'A stack with syntax errors. For debugging purpose only.'
 keywords:
-  - 'stack'
-  - 'public'
+  - 'debug'
   - 'bugged'
-author: 'TLH'
+author: 'Thomas-lhuillier'
 image: 'https://image.flaticon.com/icons/svg/269/269064.svg'
-type: 'stack'
+
 config:
   default:
     name: 'Default pipeline'

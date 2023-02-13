@@ -1,27 +1,31 @@
 ---
 version: '2'
 # Configuration of the Cycloid stack
-name: 'Debug-fe'
-canonical: 'tl-stack-dummy'
-status: 'public'
+name: 'debug-stack'
+canonical: 'debug-stack'
+status: 'private'
 description: |
-  This stack is a dummy stack which helps debugging when working on the front-end.
+  This stack is a dummy stack which helps debugging when working on stack related development tasks.
 keywords:
   - 'debug'
   - 'dummy'
-author: 'Thomas'
+  - 'provider:aws'
+  - 'provider:gcp'
+  - 'provider:scw'
+author: 'Thomas-lhuillier'
 image: |
   https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ24fdonx171ZNyuPDty7fjVfnr1pN7qMbh5w&usqp=CAU
 technologies:
-  - technology: concourse
+  - technology: cycloid
     version: n/a
-  - technology: busybox
+  - technology: concourse
     version: n/a
 
 config:
   default:
     name: 'Default'
     description: 'Default debug pipeline'
+    cloud_provider: 'aws'
     pipeline:
       pipeline:
         path: 'pipeline/pipeline.yml'
