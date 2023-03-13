@@ -13,8 +13,7 @@ keywords:
   - 'provider:gcp'
   - 'provider:scw'
 author: 'Thomas-lhuillier'
-image: |
-  https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ24fdonx171ZNyuPDty7fjVfnr1pN7qMbh5w&usqp=CAU
+image: 'https://i.imgur.com/HnLTLxK.png'
 technologies:
   - technology: cycloid
     version: n/a
