@@ -2,11 +2,35 @@
 
 This dummy stack is meant for debugging only.
 It can be used to check:
-- Markdown rendering — Check this `README.md` file that covers github flavored markdown
+- Markdown rendering — Check this `README.md` file that showcase GitHub flavored markdown and compare it to [how GitHub renders it](https://github.com/Thomas-lhuillier/catalog-repo/blob/stacks/debug-stack/README.md)
 - Terminal output styles — Run pipeline jobs to echo debugging content
 - Pipeline resources and jobs, with combination of properties (parallel, do, try, on_success, on_failure…)
 
+## Running a local worker on staging
+In order run jobs on staging, you will need to deploy a local docker worker and expose it to the staging concourse server. Generally it's best to tag your local worker to avoid having your worker flooded by other jobs.
+
+Use the following command to run a local worker.
+To get the values for `CYCLOID_WORKER_TEAM` and `CYCLOID_WORKER_KEY`, open the modal for deploying a docker worker on the staging console workers page. 
+
+```bash
+export CYCLOID_WORKER_TEAM="replace_me"
+export CYCLOID_WORKER_KEY="replace_me"
+export TAG="replace_me"
+
+docker run -it \
+  --rm \
+  --privileged \
+  --name cycloid-worker \
+  --env SCHEDULER_PORT=32224 \
+  --env SCHEDULER_HOST=concourse.staging.cycloid.io \
+  --env TEAM_ID=$CYCLOID_WORKER_TEAM \
+  --env WORKER_KEY=$CYCLOID_WORKER_KEY \
+  --env CONCOURSE_TAG=$TAG \
+  cycloid/local-worker --baggageclaim-driver=overlay
+```
+
 ---
+
 
 > Markdown is a lightweight markup language that you can use to add formatting elements to plaintext text documents. Created by [John Gruber](https://daringfireball.net/projects/markdown/) in 2004, Markdown is now one of the world’s most popular markup languages.
 > 

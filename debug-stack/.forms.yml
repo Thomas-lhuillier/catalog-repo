@@ -1,19 +1,32 @@
----
-default:
-  pipeline:
-    config:
-      - name: "Message"
-        description: "Message to display in the job"
-        key: message
-        widget: simple_text
-        type: string
-        default: "hello world and especially to ($ organization_canonical $)"
-worker:
-  pipeline:
-    config:
-      - name: "Message"
-        description: "Message to display in the job"
-        key: message
-        widget: simple_text
-        type: string
-        default: "hello world and especially to ($ organization_canonical $)"
+version: '2'
+
+use_cases:
+  - name: default
+    sections:
+      - name: pipeline
+        groups:
+          - name: config
+            technologies: [pipeline]
+            vars:
+              - key: worker_tag
+                name: Message
+                type: string
+                widget: simple_text
+                default: hello world and especially to ($ organization_canonical $)
+                description: Message to display in the job
+
+  - name: worker
+    sections:
+      - name: pipeline
+        groups:
+          - name: worker
+            technologies: [pipeline]
+            vars:
+              - key: worker_tag
+                name: Worker tag
+                type: string
+                widget: simple_text
+                default:
+                description: |
+                  The tags by which to match workers. The jobs will run on workers that match the given tags. Leave it empty to use non tagged workers.
+                  Check the stack README for guidance on how to run a local worker.

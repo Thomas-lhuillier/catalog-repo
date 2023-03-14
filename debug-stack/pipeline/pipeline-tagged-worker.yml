@@ -2,16 +2,15 @@ resources:
   - name: dummy
     type: dummy
     source: null
-    tags:
-      - thomas
+    tags: [((worker_tag))]
   - name: pull-request
     type: pull-request
     source:
       access_token: b80424db19e80e0255d41a2622366e6e2cda8f95
       disable_ci_skip: false
       repository: thomas-lhuillier/test-repo-trigger-ci
-    tags:
-      - thomas
+    tags: [((worker_tag))]
+
 resource_types:
   - name: dummy
     type: docker-image
@@ -24,19 +23,18 @@ resource_types:
         host: registry-mirror.owl.cycloid.io
       repository: teliaoss/github-pr-resource
       tag: latest
+
 jobs:
   - name: job-hello-world
     build_logs_to_retain: 10
     plan:
       - get: pull-request
         resource: pull-request
-        tags:
-          - thomas
+        tags: [((worker_tag))]
         trigger: true
         version: every
       - put: dummy
-        tags:
-          - thomas
+        tags: [((worker_tag))]
       - config:
           platform: linux
           image_resource:
@@ -61,8 +59,7 @@ jobs:
                 else
                   printf "\n\033[42;30m  SUCCESS  \033[0m"
                 fi
-        tags:
-          - thomas
+        tags: [((worker_tag))]
         task: random-failing
       - in_parallel:
           steps:
@@ -80,10 +77,8 @@ jobs:
                       printf "\n\033[42;30m  SUCCESS  \033[0m in parallel A"
               on_success:
                 put: dummy
-                tags:
-                  - thomas
-              tags:
-                - thomas
+                tags: [((worker_tag))]
+              tags: [((worker_tag))]
               task: in-parallel-a
             - config:
                 platform: linux
@@ -99,10 +94,8 @@ jobs:
                       printf "\n\033[42;30m  SUCCESS 1  \033[0m in parallel B"
               on_success:
                 put: dummy
-                tags:
-                  - thomas
-              tags:
-                - thomas
+                tags: [((worker_tag))]
+              tags: [((worker_tag))]
               task: in-parallel-b
       - do:
           - config:
@@ -137,19 +130,14 @@ jobs:
           on_failure:
             do:
               - put: dummy
-                tags:
-                  - thomas
+                tags: [((worker_tag))]
               - put: dummy
-                tags:
-                  - thomas
+                tags: [((worker_tag))]
           on_success:
             do:
               - put: dummy
-                tags:
-                  - thomas
+                tags: [((worker_tag))]
               - put: dummy
-                tags:
-                  - thomas
-          tags:
-            - thomas
+                tags: [((worker_tag))]
+          tags: [((worker_tag))]
           task: try

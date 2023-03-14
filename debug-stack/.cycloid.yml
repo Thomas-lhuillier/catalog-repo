@@ -5,7 +5,7 @@ name: 'debug-stack'
 canonical: 'debug-stack'
 status: 'private'
 description: |
-  This stack is a dummy stack which helps debugging when working on stack related development tasks.
+  A dummy stack to help debugging when working on stack related development tasks.
 keywords:
   - 'debug'
   - 'dummy'
