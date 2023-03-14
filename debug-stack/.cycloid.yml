@@ -31,9 +31,65 @@ config:
         path: 'pipeline/variables.sample.yml'
         destination: '($ project $)/pipeline/variables-($ environment $).yml'
   aws:
-    name: 'AWS'
+    name: 'Amazon Web Services'
     description: 'Just here to display a provider use case'
     cloud_provider: 'aws'
+    pipeline:
+      pipeline:
+        path: 'pipeline/pipeline.yml'
+  google:
+    name: 'Google Cloud Provider'
+    description: 'Just here to display a provider use case'
+    cloud_provider: 'google'
+    pipeline:
+      pipeline:
+        path: 'pipeline/pipeline.yml'
+  azure:
+    name: 'Microsoft Azure'
+    description: 'Just here to display a provider use case'
+    cloud_provider: 'azurerm'
+    pipeline:
+      pipeline:
+        path: 'pipeline/pipeline.yml'
+  vmware:
+    name: 'VMware'
+    description: 'Just here to display a provider use case'
+    cloud_provider: 'vmware'
+    pipeline:
+      pipeline:
+        path: 'pipeline/pipeline.yml'
+  fe:
+    name: 'Flexible Engine'
+    description: 'Just here to display a provider use case'
+    cloud_provider: 'flexibleengine'
+    pipeline:
+      pipeline:
+        path: 'pipeline/pipeline.yml'
+  scaleway:
+    name: 'Scaleway'
+    description: 'Just here to display a provider use case'
+    cloud_provider: 'scaleway'
+    pipeline:
+      pipeline:
+        path: 'pipeline/pipeline.yml'
+  ovh:
+    name: 'OVHcloud'
+    description: 'Just here to display a provider use case'
+    cloud_provider: 'ovh'
+    pipeline:
+      pipeline:
+        path: 'pipeline/pipeline.yml'
+  alibaba:
+    name: 'Alibaba Cloud'
+    description: 'Just here to display a provider use case'
+    cloud_provider: 'alibaba'
+    pipeline:
+      pipeline:
+        path: 'pipeline/pipeline.yml'
+  oracle:
+    name: 'Oracle Cloud'
+    description: 'Just here to display a provider use case'
+    cloud_provider: 'oracle'
     pipeline:
       pipeline:
         path: 'pipeline/pipeline.yml'

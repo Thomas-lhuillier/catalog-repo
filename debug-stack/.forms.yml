@@ -20,3 +20,27 @@ use_cases:
 
   - name: aws
     sections: []
+
+  - name: google
+    sections: []
+
+  - name: azure
+    sections: []
+
+  - name: vmware
+    sections: []
+
+  - name: fe
+    sections: []
+
+  - name: scaleway
+    sections: []
+
+  - name: ovh
+    sections: []
+
+  - name: alibaba
+    sections: []
+
+  - name: oracle
+    sections: []
