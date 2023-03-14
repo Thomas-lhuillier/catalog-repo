@@ -1,35 +1,9 @@
-resources:
-  - name: dummy
-    type: dummy
-    source: null
-  - name: pull-request
-    type: pull-request
-    source:
-      access_token: b80424db19e80e0255d41a2622366e6e2cda8f95
-      disable_ci_skip: false
-      repository: thomas-lhuillier/test-repo-trigger-ci
-resource_types:
-  - name: dummy
-    type: docker-image
-    source:
-      repository: ktrysmt/concourse-dummy-resource
-  - name: pull-request
-    type: registry-image
-    source:
-      registry_mirror:
-        host: registry-mirror.owl.cycloid.io
-      repository: teliaoss/github-pr-resource
-      tag: latest
 jobs:
-  - name: job-hello-world
+  - name: job-dummy
     build_logs_to_retain: 10
     plan:
-      - get: pull-request
-        resource: pull-request
-        trigger: true
-        version: every
-      - put: dummy
-      - config:
+      - task: dummy
+        config:
           platform: linux
           image_resource:
             type: docker-image
@@ -40,86 +14,7 @@ jobs:
             args:
               - '-ec'
               - |
-                for fg in 30 31 32 33 34 35 36 37 ; do
-                  fgbright=`expr $fg + 60`
-                  bg=`expr $fg + 10`
-                  bgbright=`expr $fg + 70`
-                  printf "\033[${bg}m    \033[${bgbright}m    \033[0m   \033[${fg}m... base \033[${fgbright}m... bright \033[0m\n"
-                done
-
-                if [ `expr $RANDOM % 2` -eq 0 ]; then
-                  printf "\n\033[41;30m  ERROR  \033[0m"
-                  exit 1
-                else
-                  printf "\n\033[42;30m  SUCCESS  \033[0m"
-                fi
-        task: random-failing
-      - in_parallel:
-          steps:
-            - config:
-                platform: linux
-                image_resource:
-                  type: docker-image
-                  source:
-                    repository: busybox
-                run:
-                  path: /bin/sh
-                  args:
-                    - '-ec'
-                    - |
-                      printf "\n\033[42;30m  SUCCESS  \033[0m in parallel A"
-              on_success:
-                put: dummy
-              task: in-parallel-a
-            - config:
-                platform: linux
-                image_resource:
-                  type: docker-image
-                  source:
-                    repository: busybox
-                run:
-                  path: /bin/sh
-                  args:
-                    - '-ec'
-                    - |
-                      printf "\n\033[42;30m  SUCCESS 1  \033[0m in parallel B"
-              on_success:
-                put: dummy
-              task: in-parallel-b
-      - do:
-          - config:
-              platform: linux
-              image_resource:
-                type: docker-image
-                source:
-                  repository: busybox
-              run:
-                path: /bin/sh
-                args:
-                  - '-ec'
-                  - |
-                    printf "\n\033[42;30m  SUCCESS  \033[0m do block"
-            task: do
-      - try:
-          config:
-            platform: linux
-            image_resource:
-              type: docker-image
-              source:
-                repository: busybox
-            run:
-              path: /bin/sh
-              args:
-                - '-ec'
-                - |
-                  printf "\n\033[41;30m  ERROR  \033[0m"
-                  exit 1
-          on_failure:
-            do:
-              - put: dummy
-              - put: dummy
-          on_success:
-            do:
-              - put: dummy
-              - put: dummy
-          task: try
+                echo ,___,
+                  (O,O)
+                  /)_)
+                  ""

@@ -1,19 +1,6 @@
 version: '2'
 
 use_cases:
-  - name: default
-    sections:
-      - name: pipeline
-        groups:
-          - name: config
-            technologies: [pipeline]
-            vars:
-              - key: worker_tag
-                name: Message
-                type: string
-                widget: simple_text
-                default: hello world and especially to ($ organization_canonical $)
-                description: Message to display in the job
 
   - name: worker
     sections:
@@ -30,3 +17,6 @@ use_cases:
                 description: |
                   The tags by which to match workers. The jobs will run on workers that match the given tags. Leave it empty to use non tagged workers.
                   Check the stack README for guidance on how to run a local worker.
+
+  - name: aws
+    sections: []
