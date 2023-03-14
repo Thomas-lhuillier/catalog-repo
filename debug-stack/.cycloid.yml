@@ -37,6 +37,9 @@ config:
     pipeline:
       pipeline:
         path: 'pipeline/pipeline.yml'
+      variables:
+        path: 'pipeline/variables.sample.yml'
+        destination: '($ project $)/pipeline/variables-($ environment $).yml'
   google:
     name: 'Google Cloud Provider'
     description: 'Just here to display a provider use case'
@@ -44,6 +47,9 @@ config:
     pipeline:
       pipeline:
         path: 'pipeline/pipeline.yml'
+      variables:
+        path: 'pipeline/variables.sample.yml'
+        destination: '($ project $)/pipeline/variables-($ environment $).yml'
   azure:
     name: 'Microsoft Azure'
     description: 'Just here to display a provider use case'
@@ -51,6 +57,9 @@ config:
     pipeline:
       pipeline:
         path: 'pipeline/pipeline.yml'
+      variables:
+        path: 'pipeline/variables.sample.yml'
+        destination: '($ project $)/pipeline/variables-($ environment $).yml'
   vmware:
     name: 'VMware'
     description: 'Just here to display a provider use case'
@@ -58,6 +67,9 @@ config:
     pipeline:
       pipeline:
         path: 'pipeline/pipeline.yml'
+      variables:
+        path: 'pipeline/variables.sample.yml'
+        destination: '($ project $)/pipeline/variables-($ environment $).yml'
   fe:
     name: 'Flexible Engine'
     description: 'Just here to display a provider use case'
@@ -65,6 +77,9 @@ config:
     pipeline:
       pipeline:
         path: 'pipeline/pipeline.yml'
+      variables:
+        path: 'pipeline/variables.sample.yml'
+        destination: '($ project $)/pipeline/variables-($ environment $).yml'
   scaleway:
     name: 'Scaleway'
     description: 'Just here to display a provider use case'
@@ -72,6 +87,9 @@ config:
     pipeline:
       pipeline:
         path: 'pipeline/pipeline.yml'
+      variables:
+        path: 'pipeline/variables.sample.yml'
+        destination: '($ project $)/pipeline/variables-($ environment $).yml'
   ovh:
     name: 'OVHcloud'
     description: 'Just here to display a provider use case'
@@ -79,6 +97,9 @@ config:
     pipeline:
       pipeline:
         path: 'pipeline/pipeline.yml'
+      variables:
+        path: 'pipeline/variables.sample.yml'
+        destination: '($ project $)/pipeline/variables-($ environment $).yml'
   alibaba:
     name: 'Alibaba Cloud'
     description: 'Just here to display a provider use case'
@@ -86,6 +107,9 @@ config:
     pipeline:
       pipeline:
         path: 'pipeline/pipeline.yml'
+      variables:
+        path: 'pipeline/variables.sample.yml'
+        destination: '($ project $)/pipeline/variables-($ environment $).yml'
   oracle:
     name: 'Oracle Cloud'
     description: 'Just here to display a provider use case'
@@ -93,3 +117,6 @@ config:
     pipeline:
       pipeline:
         path: 'pipeline/pipeline.yml'
+      variables:
+        path: 'pipeline/variables.sample.yml'
+        destination: '($ project $)/pipeline/variables-($ environment $).yml'
