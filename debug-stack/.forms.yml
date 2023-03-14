@@ -19,28 +19,73 @@ use_cases:
                   Check the stack README for guidance on how to run a local worker.
 
   - name: aws
-    sections: []
+    sections:
+      - name: pipeline
+        groups:
+          - name: worker
+            technologies: [pipeline]
+            vars: []
 
   - name: google
-    sections: []
+    sections:
+      - name: pipeline
+        groups:
+          - name: worker
+            technologies: [pipeline]
+            vars: []
 
   - name: azure
-    sections: []
+    sections:
+      - name: pipeline
+        groups:
+          - name: worker
+            technologies: [pipeline]
+            vars: []
 
   - name: vmware
-    sections: []
+    sections:
+      - name: pipeline
+        groups:
+          - name: worker
+            technologies: [pipeline]
+            vars: []
 
   - name: fe
-    sections: []
+    sections:
+      - name: pipeline
+        groups:
+          - name: worker
+            technologies: [pipeline]
+            vars: []
 
   - name: scaleway
-    sections: []
+    sections:
+      - name: pipeline
+        groups:
+          - name: worker
+            technologies: [pipeline]
+            vars: []
 
   - name: ovh
-    sections: []
+    sections:
+      - name: pipeline
+        groups:
+          - name: worker
+            technologies: [pipeline]
+            vars: []
 
   - name: alibaba
-    sections: []
+    sections:
+      - name: pipeline
+        groups:
+          - name: worker
+            technologies: [pipeline]
+            vars: []
 
   - name: oracle
-    sections: []
+    sections:
+      - name: pipeline
+        groups:
+          - name: worker
+            technologies: [pipeline]
+            vars: []
