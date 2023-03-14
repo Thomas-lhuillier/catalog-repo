@@ -8,7 +8,7 @@ description: 'A stack with syntax errors. For debugging purpose only.'
 keywords:
   - 'debug'
   - 'bugged'
-author: 'Thomas-lhuillier'
+author: "Thomas L'huillier"
 image: 'https://i.imgur.com/dQY3T4K.png'
 
 config:

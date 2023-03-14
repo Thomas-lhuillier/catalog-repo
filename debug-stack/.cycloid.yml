@@ -12,7 +12,7 @@ keywords:
   - 'provider:aws'
   - 'provider:gcp'
   - 'provider:scw'
-author: 'Thomas-lhuillier'
+author: "Thomas L'huillier"
 image: 'https://i.imgur.com/HnLTLxK.png'
 technologies:
   - technology: cycloid
@@ -21,6 +21,15 @@ technologies:
     version: n/a
 
 config:
+  worker:
+    name: 'Local worker'
+    description: 'Debug pipeline running on a tagged worker'
+    pipeline:
+      pipeline:
+        path: 'pipeline/pipeline-tagged-worker.yml'
+      variables:
+        path: 'pipeline/variables.sample.yml'
+        destination: '($ project $)/pipeline/variables-($ environment $).yml'
   default:
     name: 'Default'
     description: 'Default debug pipeline'
@@ -28,15 +37,6 @@ config:
     pipeline:
       pipeline:
         path: 'pipeline/pipeline.yml'
-      variables:
-        path: 'pipeline/variables.sample.yml'
-        destination: '($ project $)/pipeline/variables-($ environment $).yml'
-  worker:
-    name: 'Local worker'
-    description: 'Debug pipeline running on a tagged worker'
-    pipeline:
-      pipeline:
-        path: 'pipeline/pipeline-tagged-worker.yml'
       variables:
         path: 'pipeline/variables.sample.yml'
         destination: '($ project $)/pipeline/variables-($ environment $).yml'
