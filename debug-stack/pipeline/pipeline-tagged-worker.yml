@@ -3,33 +3,19 @@ resources:
     type: dummy
     source: null
     tags: [((worker_tag))]
-  - name: pull-request
-    type: pull-request
-    source:
-      access_token: b80424db19e80e0255d41a2622366e6e2cda8f95
-      disable_ci_skip: false
-      repository: thomas-lhuillier/test-repo-trigger-ci
-    tags: [((worker_tag))]
 
 resource_types:
   - name: dummy
     type: docker-image
     source:
       repository: ktrysmt/concourse-dummy-resource
-  - name: pull-request
-    type: registry-image
-    source:
-      registry_mirror:
-        host: registry-mirror.owl.cycloid.io
-      repository: teliaoss/github-pr-resource
-      tag: latest
 
 jobs:
-  - name: job-hello-world
+  - name: debug-job
     build_logs_to_retain: 10
     plan:
-      - get: pull-request
-        resource: pull-request
+      - get: dummy
+        resource: dummy
         tags: [((worker_tag))]
         trigger: true
         version: every
