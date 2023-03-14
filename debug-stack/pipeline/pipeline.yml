@@ -1,17 +1,19 @@
 jobs:
-  - name: job-dummy
-    build_logs_to_retain: 10
-    plan:
-      - task: dummy
-        config:
-          platform: linux
-          image_resource:
+- name: job-dummy
+  build_logs_to_retain: 3
+  plan:
+  - task: dummy
+    config:
+        platform: linux
+        image_resource:
             type: docker-image
-            source:
-              repository: busybox
-          run:
-            path: /bin/sh
-            args:
-              - '-ec'
-              - |
-                echo yolo
+            source: {repository: busybox}
+        run:
+          path: /bin/sh
+          args:
+          - -ec
+          - |
+            echo ,___,
+              (O,O)
+              /)_)
+              ""
