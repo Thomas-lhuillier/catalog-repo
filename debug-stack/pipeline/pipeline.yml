@@ -3,6 +3,7 @@ jobs:
   build_logs_to_retain: 3
   plan:
   - task: dummy
+    tags: [((worker_tag))]
     config:
         platform: linux
         image_resource:

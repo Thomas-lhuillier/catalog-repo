@@ -24,7 +24,15 @@ use_cases:
         groups:
           - name: worker
             technologies: [pipeline]
-            vars: []
+            vars:
+              - key: worker_tag
+                name: Worker tag
+                type: string
+                widget: simple_text
+                default:
+                description: |
+                  The tags by which to match workers. The jobs will run on workers that match the given tags. Leave it empty to use non tagged workers.
+                  Check the stack README for guidance on how to run a local worker.
 
   - name: google
     sections:
@@ -32,7 +40,15 @@ use_cases:
         groups:
           - name: worker
             technologies: [pipeline]
-            vars: []
+            vars:
+              - key: worker_tag
+                name: Worker tag
+                type: string
+                widget: simple_text
+                default:
+                description: |
+                  The tags by which to match workers. The jobs will run on workers that match the given tags. Leave it empty to use non tagged workers.
+                  Check the stack README for guidance on how to run a local worker.
 
   - name: azure
     sections:
@@ -40,7 +56,15 @@ use_cases:
         groups:
           - name: worker
             technologies: [pipeline]
-            vars: []
+            vars:
+              - key: worker_tag
+                name: Worker tag
+                type: string
+                widget: simple_text
+                default:
+                description: |
+                  The tags by which to match workers. The jobs will run on workers that match the given tags. Leave it empty to use non tagged workers.
+                  Check the stack README for guidance on how to run a local worker.
 
   - name: vmware
     sections:
@@ -48,7 +72,15 @@ use_cases:
         groups:
           - name: worker
             technologies: [pipeline]
-            vars: []
+            vars:
+              - key: worker_tag
+                name: Worker tag
+                type: string
+                widget: simple_text
+                default:
+                description: |
+                  The tags by which to match workers. The jobs will run on workers that match the given tags. Leave it empty to use non tagged workers.
+                  Check the stack README for guidance on how to run a local worker.
 
   - name: fe
     sections:
@@ -56,7 +88,15 @@ use_cases:
         groups:
           - name: worker
             technologies: [pipeline]
-            vars: []
+            vars:
+              - key: worker_tag
+                name: Worker tag
+                type: string
+                widget: simple_text
+                default:
+                description: |
+                  The tags by which to match workers. The jobs will run on workers that match the given tags. Leave it empty to use non tagged workers.
+                  Check the stack README for guidance on how to run a local worker.
 
   - name: scaleway
     sections:
@@ -64,7 +104,15 @@ use_cases:
         groups:
           - name: worker
             technologies: [pipeline]
-            vars: []
+            vars:
+              - key: worker_tag
+                name: Worker tag
+                type: string
+                widget: simple_text
+                default:
+                description: |
+                  The tags by which to match workers. The jobs will run on workers that match the given tags. Leave it empty to use non tagged workers.
+                  Check the stack README for guidance on how to run a local worker.
 
   - name: ovh
     sections:
@@ -72,7 +120,15 @@ use_cases:
         groups:
           - name: worker
             technologies: [pipeline]
-            vars: []
+            vars:
+              - key: worker_tag
+                name: Worker tag
+                type: string
+                widget: simple_text
+                default:
+                description: |
+                  The tags by which to match workers. The jobs will run on workers that match the given tags. Leave it empty to use non tagged workers.
+                  Check the stack README for guidance on how to run a local worker.
 
   - name: alibaba
     sections:
@@ -80,7 +136,15 @@ use_cases:
         groups:
           - name: worker
             technologies: [pipeline]
-            vars: []
+            vars:
+              - key: worker_tag
+                name: Worker tag
+                type: string
+                widget: simple_text
+                default:
+                description: |
+                  The tags by which to match workers. The jobs will run on workers that match the given tags. Leave it empty to use non tagged workers.
+                  Check the stack README for guidance on how to run a local worker.
 
   - name: oracle
     sections:
@@ -88,4 +152,12 @@ use_cases:
         groups:
           - name: worker
             technologies: [pipeline]
-            vars: []
+            vars:
+              - key: worker_tag
+                name: Worker tag
+                type: string
+                widget: simple_text
+                default:
+                description: |
+                  The tags by which to match workers. The jobs will run on workers that match the given tags. Leave it empty to use non tagged workers.
+                  Check the stack README for guidance on how to run a local worker.
