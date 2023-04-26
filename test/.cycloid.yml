@@ -1,0 +1,35 @@
+version: "2"
+name: test
+canonical: test
+author: thomas_lhuillier
+status: private
+description: Bootstrap stack for terraform
+image: ""
+keywords:
+    - terraform
+    - start
+    - sample
+    - aws
+    - provider:aws
+    - provider:azure
+    - provider:gcp
+template: true
+technologies:
+    - technology: terraform
+      version: n/a
+dependencies: []
+config:
+    aws:
+        cloud_provider: aws
+        description: aws pipeline usecase
+        name: aws
+        pipeline:
+            pipeline:
+                path: pipeline/pipeline.yml
+            variables:
+                destination: ($ project $)/pipeline/variables-($ environment $).yml
+                path: pipeline/variables.sample.yml
+        terraform:
+            main:
+                destination: ($ project $)/terraform/($ environment $)/main.tf
+                path: terraform/main.tf.sample

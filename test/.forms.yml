@@ -1,0 +1,73 @@
+---
+version: "2"
+use_cases:
+- name: aws
+  sections:
+
+  - name: Cloud provider
+    groups:
+    - name: access
+      technologies: [pipeline]
+      vars:
+      - name: "Aws region"
+        key: aws_default_region
+        widget: auto_complete
+        type: string
+        values: ["eu-north-1","ap-south-1","eu-west-3","eu-west-2","eu-west-1","ap-northeast-2","ap-northeast-1","sa-east-1","ca-central-1","ap-southeast-1","ap-southeast-2","eu-central-1","us-east-1","us-east-2","us-west-1","us-west-2"]
+        default: eu-west-1
+      - name: "AWS access key"
+        description: "AWS access key which should be used"
+        key: aws_cred
+        widget: cy_cred
+        widget_config:
+          display_keys: false
+          cred_types:
+            - aws
+        type: string
+        default: "((aws))"
+
+
+  - name: App
+    groups:
+    - name: config
+      technologies: [terraform]
+      vars:
+      - name: "Instance type"
+        description: "Specify the size of the instance"
+        key: instance_type
+        widget: auto_complete
+        type: string
+        values: ["micro","small","medium","large"]
+        default: medium
+
+
+  - name: Git
+    groups:
+    - name: config
+      technologies: [pipeline]
+      vars:
+      - name: "Config git key"
+        description: "SSH key pair to fetch the config Git repository."
+        key: config_git_private_key
+        type: string
+        widget: cy_cred
+        widget_config:
+          cred_types:
+            - ssh
+        #default: "((ssh_config.ssh_key))"
+        required: true
+
+    - name: stack
+      technologies: [pipeline]
+      vars:
+      - name: "Stack git key"
+        description: "SSH key pair to fetch the stack Git repository."
+        key: stack_git_private_key
+        type: string
+        widget: cy_cred
+        widget_config:
+          cred_types:
+            - ssh
+        #default: "((ssh_stack.ssh_key))"
+        required: true
+
