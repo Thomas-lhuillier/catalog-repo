@@ -1,1 +1,1 @@
-TEST CATALOG REPOSITORY
+Personal catalog repository with debug stacks
