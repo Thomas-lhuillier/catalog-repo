@@ -1,0 +1,31 @@
+version: "2"
+name: tl-template-test-gcp
+canonical: tl-template-test-gcp
+author: thomas_lhuillier
+status: private
+description: Discover how to integrate Terraform in your pipelines.
+image: https://raw.githubusercontent.com/Thomas-lhuillier/catalog-repo/templates/terraform-sample/thumbnail.png
+keywords:
+    - terraform
+    - template
+    - gcp
+template: false
+technologies:
+    - technology: terraform
+      version: n/a
+dependencies: []
+config:
+    gcp:
+        cloud_provider: gcp
+        description: Interact with Google Cloud Platform (google) resources
+        name: GCP
+        pipeline:
+            pipeline:
+                path: pipeline/pipeline.yml
+            variables:
+                destination: ($ project $)/pipeline/variables-($ environment $).yml
+                path: pipeline/variables.sample.yml
+        terraform:
+            main:
+                destination: ($ project $)/terraform/($ environment $)/main.tf
+                path: terraform/main.tf.sample
