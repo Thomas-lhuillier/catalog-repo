@@ -15,13 +15,15 @@ jobs:
     build_logs_to_retain: 10
     plan:
       - get: dummy-resource
-        resource: dummy-resource
         tags: [((worker_tag))]
+        resource: dummy-resource
         trigger: true
         version: every
       - put: dummy-resource
         tags: [((worker_tag))]
-      - config:
+      - task: random-failing-task
+        tags: [((worker_tag))]
+        config:
           platform: linux
           image_resource:
             type: docker-image
@@ -45,11 +47,11 @@ jobs:
                 else
                   printf "\n\033[42;30m  SUCCESS  \033[0m"
                 fi
-        tags: [((worker_tag))]
-        task: random-failing
       - in_parallel:
           steps:
-            - config:
+            - task: in-parallel-a-task
+              tags: [((worker_tag))]
+              config:
                 platform: linux
                 image_resource:
                   type: docker-image
@@ -64,9 +66,9 @@ jobs:
               on_success:
                 put: dummy-resource
                 tags: [((worker_tag))]
+            - task: in-parallel-b-task
               tags: [((worker_tag))]
-              task: in-parallel-a
-            - config:
+              config:
                 platform: linux
                 image_resource:
                   type: docker-image
@@ -81,10 +83,10 @@ jobs:
               on_success:
                 put: dummy-resource
                 tags: [((worker_tag))]
-              tags: [((worker_tag))]
-              task: in-parallel-b
       - do:
-          - config:
+          - task: do-task
+            tags: [((worker_tag))]
+            config:
               platform: linux
               image_resource:
                 type: docker-image
@@ -96,10 +98,9 @@ jobs:
                   - '-ec'
                   - |
                     printf "\n\033[42;30m  SUCCESS  \033[0m do block"
-            tags:
-              - thomas
-            task: do
       - try:
+        - task: try-task
+          tags: [((worker_tag))]
           config:
             platform: linux
             image_resource:
@@ -125,5 +126,3 @@ jobs:
                 tags: [((worker_tag))]
               - put: dummy-resource
                 tags: [((worker_tag))]
-          tags: [((worker_tag))]
-          task: try
