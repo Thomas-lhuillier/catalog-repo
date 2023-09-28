@@ -1,11 +1,11 @@
 resources:
-  - name: dummy
-    type: dummy
+  - name: dummy-resource
+    type: dummy-resource-type
     source: null
     tags: [((worker_tag))]
 
 resource_types:
-  - name: dummy
+  - name: dummy-resource-type
     type: docker-image
     source:
       repository: ktrysmt/concourse-dummy-resource
@@ -14,12 +14,12 @@ jobs:
   - name: debug-job
     build_logs_to_retain: 10
     plan:
-      - get: dummy
-        resource: dummy
+      - get: dummy-resource
+        resource: dummy-resource
         tags: [((worker_tag))]
         trigger: true
         version: every
-      - put: dummy
+      - put: dummy-resource
         tags: [((worker_tag))]
       - config:
           platform: linux
@@ -62,7 +62,7 @@ jobs:
                     - |
                       printf "\n\033[42;30m  SUCCESS  \033[0m in parallel A"
               on_success:
-                put: dummy
+                put: dummy-resource
                 tags: [((worker_tag))]
               tags: [((worker_tag))]
               task: in-parallel-a
@@ -79,7 +79,7 @@ jobs:
                     - |
                       printf "\n\033[42;30m  SUCCESS 1  \033[0m in parallel B"
               on_success:
-                put: dummy
+                put: dummy-resource
                 tags: [((worker_tag))]
               tags: [((worker_tag))]
               task: in-parallel-b
@@ -115,15 +115,15 @@ jobs:
                   exit 1
           on_failure:
             do:
-              - put: dummy
+              - put: dummy-resource
                 tags: [((worker_tag))]
-              - put: dummy
+              - put: dummy-resource
                 tags: [((worker_tag))]
           on_success:
             do:
-              - put: dummy
+              - put: dummy-resource
                 tags: [((worker_tag))]
-              - put: dummy
+              - put: dummy-resource
                 tags: [((worker_tag))]
           tags: [((worker_tag))]
           task: try
