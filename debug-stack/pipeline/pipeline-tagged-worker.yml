@@ -99,7 +99,7 @@ jobs:
                   - |
                     printf "\n\033[42;30m  SUCCESS  \033[0m do block"
       - try:
-        - task: try-task
+          task: try-task
           tags: [((worker_tag))]
           config:
             platform: linux
