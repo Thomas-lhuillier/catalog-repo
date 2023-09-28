@@ -1,8 +1,8 @@
 jobs:
-- name: job-dummy
+- name: dummy-job
   build_logs_to_retain: 3
   plan:
-  - task: dummy
+  - task: dummy-task
     tags: [((worker_tag))]
     config:
         platform: linux
