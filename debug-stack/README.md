@@ -197,7 +197,9 @@ Blockquotes can be nested.
 Horizontal rules can be created using three or more asterisks `\*\*\*`, dashes `\-\-\-`, or underscores `\_\_\_` on a line by themselves.
 
 ***
+
 ---
+
 ___
 
 ## Inline code
