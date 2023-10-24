@@ -244,7 +244,7 @@ if (isAwesome) {
 }
 ```
 
-## Tabels 
+## Tables 
 
 ```markdown
 | First Header  | Second Header |
