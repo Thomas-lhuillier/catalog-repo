@@ -13,9 +13,9 @@ Use the following command to run a local worker.
 To get the values for `CYCLOID_WORKER_TEAM` and `CYCLOID_WORKER_KEY`, open the modal for deploying a docker worker on the staging console workers page. 
 
 ```bash
-export CYCLOID_WORKER_TEAM="replace_me"
-export CYCLOID_WORKER_KEY="replace_me"
-export TAG="replace_me"
+export CYCLOID_WORKER_TEAM=replace_me
+export CYCLOID_WORKER_KEY=replace_me
+export TAG=replace_me
 
 docker run -it \
   --rm \
