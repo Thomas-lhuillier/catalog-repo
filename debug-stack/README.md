@@ -43,7 +43,7 @@ docker run -it \
 
 ## Headers 
 
-```markdown
+```md
 # This is an h1 tag
 ## This is an h2 tag 
 ### This is an h3 tag   
@@ -61,37 +61,29 @@ docker run -it \
   
 ## Emphasis
 
-```markdown
+```md
 *This text will be italic*
 _This will also be italic_
-
 **This text will be bold**
 __This will also be bold__
-
 ~~This text will be crossed out (strikethrough)~~ 
-
 _You **can** combine them_
-
 ***All this text is bold and italic***
 ```
 
 *This text will be italic*
 _This will also be italic_
-
 **This text will be bold**
 __This will also be bold__
-
 ~~This text will be crossed out (strikethrough)~~ 
-
 _You **can** combine them_
-
 ***All this text is bold and italic***
 
 ## Lists
 
 ### Unordered
 
-```markdown
+```md
 * Item 1
 * Item 2
   * Item 2a
@@ -104,7 +96,7 @@ _You **can** combine them_
   * Item 2b
 
 
-```markdown
+```md
 - Item 1
 - Item 2
   - Item 2a
@@ -118,7 +110,7 @@ _You **can** combine them_
 
 ### Ordered
 
-```markdown
+```md
 1. Item 1
 1. Item 2
 1. Item 3
@@ -134,7 +126,7 @@ _You **can** combine them_
 
 ## Images 
 
-```markdown
+```md
 Format:  ![Alt Text](url)
 Example: ![Image of Yaktocat](https://octodex.github.com/images/yaktocat.png)
 ```
@@ -143,22 +135,21 @@ Example: ![Image of Yaktocat](https://octodex.github.com/images/yaktocat.png)
 
 ## Links 
 
-```markdown
+```md
 http://github.com - automatic!
 ```
 
 http://github.com - automatic!
 
-```markdown
-Format:  [Test](url)
-Example: [GitHub](http://github.com)
+```md
+[GitHub](http://github.com)
 ```
 
 [GitHub](http://github.com)
 
 ## Blockquotes
 
-```markdown
+```md
 As Kanye West said:
 
 > We're living the future so
@@ -172,7 +163,7 @@ As Kanye West said:
 
 Blockquotes can be nested.
 
-```markdown
+```md
 > Dorothy followed her through many of the beautiful rooms in her castle.
 >
 >> The Witch bade her clean the pots and kettles and sweep the floor and keep the fire fed with wood.
@@ -194,7 +185,7 @@ ___
 
 ## Inline code
 
-```markdown
+```md
 I think you should use an `<addr>` element here instead.
 ```
 
@@ -204,7 +195,7 @@ I think you should use an `<addr>` element here instead.
 
 ### No highlighting 
 
-````markdown
+````md
 ```
 if (isAwesome){
   return true
@@ -220,7 +211,7 @@ if (isAwesome) {
 
 ### Highlighting 
 
-````markdown
+````md
 ```javascript 
 if (isAwesome){
   return true
@@ -236,7 +227,7 @@ if (isAwesome) {
 
 ## Tables 
 
-```markdown
+```md
 | First Header  | Second Header |
 | ------------- | ------------- |
 | Content Cell  | Content Cell  |
@@ -248,7 +239,7 @@ if (isAwesome) {
 | Content Cell  | Content Cell  |
 | Content Cell  | Content Cell  |
 
-```markdown
+```md
 | Left-aligned | Center-aligned | Right-aligned |
 | :---         |     :---:      |          ---: |
 | git status   | git status     | git status    |
@@ -264,7 +255,7 @@ Your Markdown does't have to be pretty.
 
 There must be at least 3 dashes separating each header cell. The outer pipes (`|`) are optional, and you don't need to make the table columns line up prettily.
 
-```markdown
+```md
 Less | Pretty | Markdown 
 --- | --- | ---
 1 | 2 | 3 
@@ -299,7 +290,7 @@ Markdown allows you to use backslash escapes to generate literal characters whic
 
 ## Task Lists
 
-```
+```md
 - [x] this is a complete item 
 - [ ] this is an incomplete it
 ```
@@ -337,7 +328,7 @@ Markdown also supports raw HTML.
 
 ## Emoji
 
-```markdown
+```md
 :+1: :sparkles: :camel: :tada: :rocket: :metal:
 ```
 
