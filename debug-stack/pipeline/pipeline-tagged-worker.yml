@@ -24,7 +24,7 @@ resources:
     type: dummy-resource-type
     source: null
     <<: *tags
-  - name: null
+  - name: useless
     type: dummy-resource-type
     source: null
     <<: *tags
@@ -164,7 +164,7 @@ jobs:
         version: every
       - put: nada
         <<: *tags
-      - put: null
+      - put: useless
         <<: *tags
       - task: failing-task
         <<: *tags
@@ -208,8 +208,8 @@ jobs:
   - <<: *dummy-job
     name: Juliet
     plan:
-      - get: null
-        resource: null
+      - get: useless
+        resource: useless
         <<: *tags
         trigger: true
         version: every
