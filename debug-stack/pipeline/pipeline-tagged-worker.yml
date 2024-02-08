@@ -160,6 +160,21 @@ jobs:
         version: every
       - put: nada
         <<: *tags
+      - task: failing-task
+        <<: *tags
+        config:
+          platform: linux
+          image_resource:
+            name: ''
+            type: docker-image
+            source:
+              repository: busybox
+          run:
+            path: /bin/sh
+            args:
+              - '-ec'
+              - |
+                  exit 1
   - <<: *dummy-job
     name: Bravo
   - <<: *dummy-job
