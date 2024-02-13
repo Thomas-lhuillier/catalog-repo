@@ -19,10 +19,12 @@ resources:
   - name: nada
     type: dummy-resource-type
     source: null
+    icon: texture-box
     <<: *tags
   - name: void
     type: dummy-resource-type
     source: null
+    icon: earth-box
     <<: *tags
   - name: useless
     type: dummy-resource-type
