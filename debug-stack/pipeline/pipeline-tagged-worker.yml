@@ -193,6 +193,7 @@ jobs:
     name: Foxtrot
   - <<: *dummy-job
     name: Golf
+    passed: [Alpha, Delta, Charly]
   - name: Hotel
     plan:
     - get: void
@@ -213,3 +214,4 @@ jobs:
         <<: *tags
         trigger: true
         version: every
+        passed: [Alpha]
