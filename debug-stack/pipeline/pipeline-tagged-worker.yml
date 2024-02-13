@@ -193,7 +193,13 @@ jobs:
     name: Foxtrot
   - <<: *dummy-job
     name: Golf
-    passed: [Alpha, Delta, Charly]
+    plan:
+      - get: useless
+        resource: useless
+        <<: *tags
+        trigger: true
+        version: every
+        passed: [Alpha, Delta, Charly]
   - name: Hotel
     plan:
     - get: void
