@@ -195,7 +195,7 @@ jobs:
     name: Golf
     plan:
       - get: nada
-        resource: useless
+        resource: nada
         <<: *tags
         trigger: true
         version: every
