@@ -194,7 +194,7 @@ jobs:
   - <<: *dummy-job
     name: Golf
     plan:
-      - get: useless
+      - get: nada
         resource: useless
         <<: *tags
         trigger: true
