@@ -24,11 +24,12 @@ resources:
   - name: void
     type: dummy-resource-type
     source: null
-    icon: earth-box
+    icon: gradient-horizontal
     <<: *tags
-  - name: useless
+  - name: abyss
     type: dummy-resource-type
     source: null
+    icon: set-none
     <<: *tags
 resource_types:
   - name: dummy-resource-type
@@ -166,7 +167,7 @@ jobs:
         version: every
       - put: nada
         <<: *tags
-      - put: useless
+      - put: abyss
         <<: *tags
       - task: failing-task
         <<: *tags
@@ -217,9 +218,18 @@ jobs:
   - <<: *dummy-job
     name: Juliet
     plan:
-      - get: useless
-        resource: useless
+      - get: abyss
+        resource: abyss
         <<: *tags
         trigger: true
         version: every
         passed: [Alpha]
+  - <<: *dummy-job
+    name: Kilo
+    plan:
+      - get: abyss
+        resource: abyss
+        <<: *tags
+        trigger: true
+        version: every
+        passed: [Juliet]
