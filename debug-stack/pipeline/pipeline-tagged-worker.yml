@@ -24,7 +24,7 @@ resources:
   - name: void
     type: dummy-resource-type
     source: null
-    icon: gradient-horizontal
+    icon: flip-horizontal
     <<: *tags
   - name: abyss
     type: dummy-resource-type
