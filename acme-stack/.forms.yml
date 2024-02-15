@@ -22,30 +22,6 @@ use_cases:
         values: ["micro", "small", "medium", "large"]
         default: "medium"
 
-  - name: Git
-    groups:
-    - name: config
-      technologies: [pipeline]
-      vars:
-      - name: "Config git key"
-        description: "SSH key pair to fetch the config Git repository."
-        key: config_git_private_key
-        type: string
-        required: true
-        widget: cy_cred
-        widget_config:
-          cred_types: [ssh]
-    - name: stack
-      technologies: [pipeline]
-      vars:
-      - name: "Stack git key"
-        description: "SSH key pair to fetch the stack Git repository."
-        key: stack_git_private_key
-        type: string
-        required: true
-        widget: cy_cred
-        widget_config:
-          cred_types: [ssh]
 - name: backend
   sections:
   - name: Cloud provider
@@ -63,28 +39,3 @@ use_cases:
         widget: auto_complete
         values: ["micro", "small", "medium", "large"]
         default: "medium"
-
-  - name: Git
-    groups:
-    - name: config
-      technologies: [pipeline]
-      vars:
-      - name: "Config git key"
-        description: "SSH key pair to fetch the config Git repository."
-        key: config_git_private_key
-        type: string
-        required: true
-        widget: cy_cred
-        widget_config:
-          cred_types: [ssh]
-    - name: stack
-      technologies: [pipeline]
-      vars:
-      - name: "Stack git key"
-        description: "SSH key pair to fetch the stack Git repository."
-        key: stack_git_private_key
-        type: string
-        required: true
-        widget: cy_cred
-        widget_config:
-          cred_types: [ssh]
