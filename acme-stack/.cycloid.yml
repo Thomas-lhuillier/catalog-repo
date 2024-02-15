@@ -17,9 +17,9 @@ status: 'private'
 # Add use cases to the stack.
 # See: https://docs.cycloid.io/manage/pipeline/multi-use-case.html#multiple-use-case
 config:
-  frontend:
-    name: 'Frontend'
-    description: 'Cloud-agnostic Terraform sample with no specific provider integration.'
+  production:
+    name: 'Production'
+    description: 'Full featured auto scaling infrastructure for production like environments.'
     pipeline:
       pipeline:
         path: 'pipeline/pipeline.yml'
@@ -30,9 +30,9 @@ config:
       main:
         path: 'terraform/main.tf.sample'
         destination: '($ project $)/terraform/($ environment $)/main.tf'
-  backend:
-    name: 'Backend'
-    description: 'Cloud-agnostic Terraform sample with no specific provider integration.'
+  develop:
+    name: 'Develop'
+    description: 'Minimal infrastructure running code with debug flags on.'
     pipeline:
       pipeline:
         path: 'pipeline/pipeline.yml'
