@@ -4,11 +4,8 @@ version: 2
 # Define the stack configuration form and organize inputs of various types into sections and groups.
 # See: https://docs.staging.cycloid.io/deploy/stackforms/file-format.html
 use_cases:
-- name: frontend
+- name: production
   sections:
-  - name: Cloud provider
-    groups:
-
   - name: App
     groups:
     - name: config
@@ -22,11 +19,8 @@ use_cases:
         values: ["micro", "small", "medium", "large"]
         default: "medium"
 
-- name: backend
+- name: develop
   sections:
-  - name: Cloud provider
-    groups:
-
   - name: App
     groups:
     - name: config
