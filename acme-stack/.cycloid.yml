@@ -4,8 +4,8 @@ name: acme-stack
 canonical: acme-stack
 author: 'thomas_lhuillier'
 # Fill in the stack details.
-description: 'Discover how to integrate Terraform in your pipelines.'
-image: https://github.com/cycloidio/bootstrap-stacks/blob/master/blank-sample/thumbnail.png
+description: 'CI/CD for the Acme app.'
+image: https://github.com/Thomas-lhuillier/catalog-repo/blob/stacks/acme-stack/thumbnail.png?raw=true
 keywords:
   - 'terraform'
   - 'vanilla'
