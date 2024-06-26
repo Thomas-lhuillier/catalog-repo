@@ -29,5 +29,5 @@ jobs:
           - -ec
           - |
             echo -e ",___,\n(O,O)\n/)_)\n \"\""
-            echo -e "This task is only made available when the env is prod or staging"
+            echo -e "This task is only made available when the env is prod or demo"
 ($- end $)
