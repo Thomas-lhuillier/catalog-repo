@@ -7,9 +7,9 @@
           path: 'pipeline/pipeline.yml'
         variables:
           path: 'pipeline/variables.sample.yml'
-          destination: '($ .project $)/pipeline/($ .environment $)/variables.yml'
+          destination: '($ .config_root $)/pipeline/variables.yml'
 # Configuration of the Cycloid stack
-version: '3'
+version: '4'
 name: 'debug-stack'
 canonical: 'debug-stack'
 status: 'private'
@@ -37,7 +37,7 @@ config:
         path: 'pipeline/pipeline-tagged-worker.yml'
       variables:
         path: 'pipeline/variables.sample.yml'
-        destination: '($ .project $)/pipeline/($ .environment $)/variables.yml'
+        destination: '($ .config_root $)/pipeline/variables.yml'
   debug-stackforms:
     name: 'Debug stackforms'
     description: 'Render a wide variety stackforms widgets'

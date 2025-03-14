@@ -1,6 +1,5 @@
 ---
-version: '2'
-# Configuration of the Cycloid stack
+version: '4'
 name: 'Bugged stack'
 canonical: 'bugged-stack'
 status: 'private'
