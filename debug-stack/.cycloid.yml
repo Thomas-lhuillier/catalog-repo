@@ -57,7 +57,7 @@ config:
     name: 'VMware'
     cloud_provider: 'vmware'
     pipeline: *default-pipeline
-  fe:
+  flexibleengine:
     name: 'Flexible Engine'
     cloud_provider: 'flexibleengine'
     pipeline: *default-pipeline

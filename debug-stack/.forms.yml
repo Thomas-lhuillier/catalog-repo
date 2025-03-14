@@ -201,7 +201,7 @@ use_cases:
   - name: vmware
     sections:
       - *tagged-worker
-  - name: fe
+  - name: flexibleengine
     sections:
       - *tagged-worker
   - name: scaleway
