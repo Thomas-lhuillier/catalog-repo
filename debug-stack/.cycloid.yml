@@ -12,7 +12,6 @@
 version: '4'
 name: 'debug-stack'
 canonical: 'debug-stack'
-status: 'private'
 description: |
   A dummy stack to help debugging when working on stack related development tasks.
 keywords:

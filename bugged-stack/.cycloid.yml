@@ -2,7 +2,6 @@
 version: '4'
 name: 'Bugged stack'
 canonical: 'bugged-stack'
-status: 'private'
 description: 'A stack with syntax errors. For debugging purpose only.'
 keywords:
   - 'debug'
