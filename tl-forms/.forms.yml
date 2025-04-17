@@ -4,7 +4,7 @@ use_cases:
   - name: Application
     groups:
     - name: Configuration
-      key: group_1
+      technologies: [pipeline]
       vars:
       - name: Enable conditional fields
         key: enable_cond
