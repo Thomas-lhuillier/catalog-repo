@@ -4,19 +4,33 @@ use_cases:
   - name: Application
     groups:
     - name: Configuration
-      technologies: [ansible]
+      key: group_1
       vars:
       - name: Enable conditional fields
         key: enable_cond
         widget: switch
         type: boolean
         default: false
+      - name: Enable conditional fields 2
+        key: enable_cond_2
+        widget: dropdown
+        type: boolean
+        values: [true, false]
+        default: false
+        required: true
     - name: Advanced configuration
-      technologies: [ansible]
       condition: '$enable_cond == true'
       vars:
       - name: Required conditional value
         key: required_cond_value
+        widget: simple_text
+        type: string
+        required: true
+    - name: "Advanced configuration 2"
+      condition: 'enable_cond_2 == true'
+      vars:
+      - name: Required conditional value 2
+        key: required_cond_value_2
         widget: simple_text
         type: string
         required: true
