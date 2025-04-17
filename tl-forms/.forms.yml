@@ -1,16 +1,22 @@
-# Define the stack configuration form and organize inputs of various types into sections and groups.
-# See: https://docs.staging.cycloid.io/deploy/stackforms/file-format.html
 use_cases:
 - name: default
   sections:
-  - name: Example section
+  - name: Application
     groups:
-    - name: Example group
-      technologies: [pipeline]
+    - name: Configuration
+      technologies: [ansible]
       vars:
-      - name: "Message"
-        description: "A message echoed during pipeline runs."
-        key: message
-        type: string
+      - name: Enable conditional fields
+        key: enable_cond
+        widget: switch
+        type: boolean
+        default: false
+    - name: Advanced configuration
+      technologies: [ansible]
+      condition: '$enable_cond == true'
+      vars:
+      - name: Required conditional value
+        key: required_cond_value
         widget: simple_text
-        default: "hello world"
+        type: string
+        required: true
