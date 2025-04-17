@@ -5,7 +5,7 @@ canonical: tl-forms
 author: 'thomas_lhuillier'
 # Fill in the stack details.
 description: 'The bare minimum files to build your stack from scratch.'
-image: https://github.com/cycloidio/bootstrap-stacks/blob/master/blank-sample/thumbnail.png
+image: https://i.imgur.com/UdU5CKY.png
 template: false
 status: 'public'
 # Add use cases to the stack.
