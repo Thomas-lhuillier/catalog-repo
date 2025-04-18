@@ -33,7 +33,7 @@ resources:
     <<: *tags
 resource_types:
   - name: dummy-resource-type
-    type: docker-image
+    type: registry-image
     source:
       repository: ktrysmt/concourse-dummy-resource
 jobs:
@@ -53,7 +53,7 @@ jobs:
           platform: linux
           image_resource:
             name: ''
-            type: docker-image
+            type: registry-image
             source:
               repository: busybox
           run:
@@ -84,7 +84,7 @@ jobs:
                 platform: linux
                 image_resource:
                   name: ''
-                  type: docker-image
+                  type: registry-image
                   source:
                     repository: busybox
                 run:
@@ -102,7 +102,7 @@ jobs:
                 platform: linux
                 image_resource:
                   name: ''
-                  type: docker-image
+                  type: registry-image
                   source:
                     repository: busybox
                 run:
@@ -121,7 +121,7 @@ jobs:
               platform: linux
               image_resource:
                 name: ''
-                type: docker-image
+                type: registry-image
                 source:
                   repository: busybox
               run:
@@ -137,7 +137,7 @@ jobs:
             platform: linux
             image_resource:
               name: ''
-              type: docker-image
+              type: registry-image
               source:
                 repository: busybox
             run:
@@ -177,7 +177,7 @@ jobs:
           platform: linux
           image_resource:
             name: ''
-            type: docker-image
+            type: registry-image
             source:
               repository: busybox
           run:
