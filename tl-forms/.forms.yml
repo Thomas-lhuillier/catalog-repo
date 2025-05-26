@@ -1,36 +1,170 @@
 use_cases:
 - name: default
   sections:
-  - name: Application
+
+  - name: Widgets
+    groups:
+    - name: Basic
+      vars:
+      - name: Simple text
+        description: A single-line text input for short strings or labels.
+        widget: simple_text
+        key: simple_text
+        type: string
+        default: Default content
+      - name: Number
+        description: An input for integer values, with up/down stepper.
+        widget: number
+        key: number
+        type: integer
+        default: 42
+      - name: Text area
+        description: A multi-line text field, useful for longer content or descriptions. It can also contain raw code.
+        widget: text_area
+        key: text_area
+        type: string
+        default: Default content
+      - name: Dropdown
+        description: "A compact select menu allowing one choice from a predefined list. Multiselect can be enabled using `widget_config.multiselect: true`"
+        widget: dropdown
+        key: dropdown
+        type: string
+        default: Foo
+        values:
+          - Foo
+          - Bar
+      - name: Auto complete
+        description: A searchable input that suggests values as you type from a fixed list, and where users can provide a custom value.
+        widget: auto_complete
+        key: auto_complete
+        type: string
+        default: Foo
+        values:
+          - Foo
+          - Bar
+      - name: Radios
+        description: A set of radio buttons to choose one option from a predefined list.
+        widget: radios
+        key: radios
+        type: string
+        default: Foo
+        values:
+          - Foo
+          - Bar
+      - name: Switch
+        description: A toggle for enabling or disabling a boolean value (on/off).
+        widget: switch
+        key: switch
+        type: boolean
+        default: true
+      - name: Slider range
+        description: A numeric slider to pick a value within a specific range.
+        widget: slider_range
+        key: slider_range
+        type: integer
+        default: 42
+        values:
+          - 10
+          - 100
+      - name: Slider list
+        description: A slider for selecting from a fixed list of textual values.
+        widget: slider_list
+        key: slider_list
+        type: string
+        default: Bar
+        values:
+          - Foo
+          - Bar
+          - Baz
+    - name: Cycloid entities
+      vars:
+      - name: Cycloid credential
+        description: Select a credential stored in Cycloid for secure access.
+        widget: cy_cred
+        key: cy_cred
+        type: string
+      - name: Cycloid inventory resource
+        description: Pick a resource from your Cycloid inventory and output one of its attributes.
+        key: cy_inventory_resource
+        type: string
+        widget: cy_inventory_resource
+        widget_config:
+          attribute: id
+      - name: Cycloid catalog repository
+        description: Pick a repository from your Cycloid catalog repositories.
+        widget: cy_scs
+        key: cy_scs
+        type: string
+        default: "git@....git"
+      - name: Cycloid config repository
+        description: Pick a repository from your Cycloid config repositories.
+        widget: cy_crs
+        key: cy_crs
+        type: string
+        default: "git@....git"
+      - name: Cycloid repository branch
+        description: Choose a Git branch from the selected Cycloid catalog/config repository.
+        widget: cy_branch
+        key: cy_branch
+        source: cy_scs
+        type: string
+        default: master
+
+  - name: Descriptions
+    groups:
+    - name: Descriptions
+      vars:
+      - name: Simple text
+        description: |
+          The optional `description` attribute of a widget can provide additional details for users.
+          It supports some markdown formatting like **bold**, *italic*, [links](target) and even github style emojis :+1: `:+1:`
+        widget: simple_text
+        key: description
+        type: string
+        default: Default content
+        
+  - name: Validation
+    groups:
+    - name: RegExp
+      vars:
+      - name: IP address
+        description: RegExp validation can be used to validate user input.
+        widget: simple_text
+        key: regexp_validation
+        type: string
+        default: 127.0.0.1
+        validations:
+          - regexp: ^((25[0-5]|(2[0-4]|1\d|[1-9]|)\d)\.?\b){4}$
+            error_message: 'This must be a valid IP adress'
+          
+  - name: Conditions
     groups:
     - name: Configuration
-      technologies: [pipeline]
       vars:
-      - name: Enable conditional fields
-        key: enable_cond
+      - name: Enable group foo
+        key: enable_group_foo
         widget: switch
         type: boolean
-        default: false
-      - name: Enable conditional fields 2
-        key: enable_cond_2
+        default: true
+      - name: Enable group bar
+        key: enable_group_bar
         widget: dropdown
         type: boolean
         values: [true, false]
         default: false
-        required: true
-    - name: Advanced configuration
-      condition: '$enable_cond == true'
+    - name: Conditional group Foo
+      condition: 'enable_group_foo == true'
       vars:
-      - name: Required conditional value
-        key: required_cond_value
+      - name: Conditional value
+        key: foo_simple_text
         widget: simple_text
         type: string
-        required: true
-    - name: "Advanced configuration 2"
-      condition: 'enable_cond_2 == true'
+    - name: Conditional group Bar
+      condition: 'enable_group_bar == true'
       vars:
-      - name: Required conditional value 2
-        key: required_cond_value_2
+      - name: Conditional value
+        key: bar_simple_text
+        description: Note that this conditional field is required, it should be so only when the condition to enable the group is met.
         widget: simple_text
         type: string
         required: true
