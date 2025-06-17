@@ -1,13 +1,13 @@
 version: '4'
-name: tl-dummy-terraform
-canonical: tl-dummy-terraform
+name: Fake terraform
+canonical: fake-terraform
 author: 'thomas_lhuillier'
-# Fill in the stack details.
-description: 'This stack contains automation to run Terraform code and manage infrastructure as code.'
-image: https://github.com/cycloidio/bootstrap-stacks/blob/master/blank-sample/thumbnail.png
+description: 'A stack provisioning fake terraform resources.'
+image: https://i.imgur.com/Pw8RjK5.png
 keywords:
   - 'terraform'
-  - 'vanilla'
+  - 'fake'
+  - 'debug'
 technologies:
   - technology: terraform
     version: 1.8.2

@@ -1,8 +1,26 @@
+.definitions:
+  sections:
+    - section: &tagged-worker
+        name: worker
+        groups:
+          - name: worker
+            technologies: [pipeline]
+            vars:
+              - key: worker_tag
+                name: Worker tag
+                type: string
+                widget: simple_text
+                default:
+                description: |+
+                  The tags by which to match workers. The jobs will run on workers that match the given tags. Leave it empty to use non tagged workers.
+                  Check the stack README for guidance on how to run a local worker.
+
 # Define the stack configuration form and organize inputs of various types into sections and groups.
 # See: https://docs.staging.cycloid.io/deploy/stackforms/file-format.html
 use_cases:
 - name: vanilla
   sections:
+  - *tagged-worker
   - name: Cloud provider
     groups:
 

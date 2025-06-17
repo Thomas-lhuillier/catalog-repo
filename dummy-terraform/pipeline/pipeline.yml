@@ -2,10 +2,14 @@
 # This helps reducing bloat in YAML files by removing code duplication.
 # See: https://docs.cycloid.io/deploy/stackforms/advanced.html#yaml-anchors-and-aliases
 definitions:
+  shared:
+    - &tags
+      tags: [((worker_tag))]
   tasks:
     # The task producing a configured stack, merging stack and config.
     - &task-merge-stack-and-config
       task: merge-stack-and-config
+      <<: *tags
       config:
         platform: linux
         image_resource:
@@ -41,6 +45,7 @@ resources:
 # The Terraform Concourse resource to manage infrastructure via Terraform.
 # See: https://github.com/cycloidio/terraform-resource#source-configuration
 - name: tfstate
+  <<: *tags
   type: terraform
   icon: terraform
   source:
@@ -57,6 +62,7 @@ resources:
       component: ($ .component $)
 # The Terraform stack (will be merged with the config).
 - name: git_stack
+  <<: *tags
   type: git
   icon: github-circle
   source:
@@ -77,6 +83,7 @@ resources:
 
 # The Terraform config (will be merged with the stack).
 - name: git_config
+  <<: *tags
   type: git
   icon: github-circle
   source:
@@ -103,11 +110,14 @@ jobs:
     plan:
       - do:
         - get: git_stack
+          <<: *tags
           trigger: true
         - get: git_config
+          <<: *tags
           trigger: true
         - *task-merge-stack-and-config
         - put: tfstate
+          <<: *tags
           params:
             plan_only: true
             terraform_source: merged-stack/
@@ -119,19 +129,23 @@ jobs:
     plan:
       - do:
         - get: git_stack
+          <<: *tags
           trigger: false
           passed:
             - terraform-plan
         - get: git_config
+          <<: *tags
           trigger: false
           passed:
             - terraform-plan
         - get: tfstate
+          <<: *tags
           trigger: false
           passed:
             - terraform-plan
         - *task-merge-stack-and-config
         - put: tfstate
+          <<: *tags
           params:
             plan_run: true
             terraform_source: merged-stack/
@@ -144,10 +158,13 @@ jobs:
       - do:
           - get: git_stack
             trigger: false
+            <<: *tags
           - get: git_config
             trigger: false
+            <<: *tags
           - *task-merge-stack-and-config
           - put: tfstate
+            <<: *tags
             params:
               action: destroy
               terraform_source: merged-stack/
