@@ -10,7 +10,7 @@
           destination: '($ .config_root $)/pipeline/variables.yml'
 # Configuration of the Cycloid stack
 version: '4'
-name: 'debug-stack'
+name: 'Debug stack'
 canonical: 'debug-stack'
 description: |
   A dummy stack to help debugging when working on stack related development tasks.
@@ -20,7 +20,7 @@ keywords:
   - 'provider:aws'
   - 'provider:gcp'
   - 'provider:scw'
-author: "Thomas L'huillier"
+author: 'thomas_lhuillier'
 image: 'https://i.imgur.com/HnLTLxK.png'
 technologies:
   - technology: cycloid

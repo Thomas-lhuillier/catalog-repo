@@ -6,7 +6,7 @@ description: 'A stack with syntax errors. For debugging purpose only.'
 keywords:
   - 'debug'
   - 'bugged'
-author: "Thomas L'huillier"
+author: 'thomas_lhuillier'
 image: 'https://i.imgur.com/dQY3T4K.png'
 
 config:
