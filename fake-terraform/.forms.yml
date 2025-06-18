@@ -21,18 +21,14 @@ use_cases:
 - name: vanilla
   sections:
   - *tagged-worker
-  - name: Cloud provider
+  - name: provider
     groups:
-
-  - name: Terraform variable example
-    groups:
-    - name: Configuration
+    - name: Access
       technologies: [terraform]
       vars:
-      - name: "Tshirt size"
-        description: "This is a **Terraform variable example**"
-        key: module.example.tshirt_size # Module name should match the Terraform module name specified in main.tf.sample
+      - name: fakewebservices token
+        description: Create a user or team API token in Terraform Cloud/Enterprise.
+        key: provider_token
         type: string
-        widget: auto_complete
-        values: ["S", "M", "L", "XXL"]
-        default: "M"
+        widget: simple_text
+        default:
