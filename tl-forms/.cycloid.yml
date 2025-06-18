@@ -5,7 +5,7 @@ canonical: tl-forms
 author: 'thomas_lhuillier'
 # Fill in the stack details.
 description: 'Renders a wide variety of forms widgets and options.'
-image: https://i.imgur.com/UdU5CKY.png
+image: https://i.imgur.com/oB8v1Ci.png
 template: false
 # Add use cases to the stack.
 # See: https://docs.cycloid.io/manage/pipeline/multi-use-case.html#multiple-use-case
