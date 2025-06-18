@@ -15,7 +15,7 @@ output "lb_id" {
 
 output "server_ids" {
   description = "List of ID of servers"
-  value       = fakewebservices_server.servers[*].id
+  value       = fakewebservices_server.servers.*.id
 }
 
 output "db_id" {
