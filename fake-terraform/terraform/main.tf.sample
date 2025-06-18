@@ -1,22 +1,15 @@
-resource "fakewebservices_vpc" "primary_vpc" {
-  name       = "Primary VPC"
-  cidr_block = "0.0.0.0/1"
-}
+module "fake" {
+  #####################################
+  # Do not modify the following lines #
+  source   = "./module-fake"
+  cyorg  = var.cyorg
+  cypro  = var.cypro
+  cyenv  = var.cyenv
+  cycom  = var.cycom
+  #####################################
 
-resource "fakewebservices_server" "servers" {
-  count = 2
+  ### Change the terraform HCL in module-compute according to your needs.
+  ### Here below, add the variables coming from .forms.yml file when technology is terraform to pass them to the compute module.
 
-  name = "Server ${count.index + 1}"
-  type = "t2.micro"
-  vpc  = fakewebservices_vpc.primary_vpc.name
-}
-
-resource "fakewebservices_load_balancer" "primary_lb" {
-  name    = "Primary Load Balancer"
-  servers = fakewebservices_server.servers.*.name
-}
-
-resource "fakewebservices_database" "prod_db" {
-  name = "Production DB"
-  size = 256
+  provider_token = var.provider_token
 }
