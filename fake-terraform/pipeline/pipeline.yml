@@ -60,6 +60,7 @@ resources:
       project: ($ .project $)
       organization: ($ .organization $)
       component: ($ .component $)
+      provider_token: ((provider_token))
 # The Terraform stack (will be merged with the config).
 - name: git_stack
   <<: *tags

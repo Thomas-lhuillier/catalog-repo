@@ -24,7 +24,7 @@ use_cases:
   - name: provider
     groups:
     - name: Access
-      technologies: [terraform]
+      technologies: [terraform, pipeline]
       vars:
       - name: fakewebservices token
         description: Create a user or team API token in Terraform Cloud/Enterprise.
