@@ -8,7 +8,7 @@ keywords:
   - 'bugged'
 author: 'thomas_lhuillier'
 image: 'https://i.imgur.com/dQY3T4K.png'
-
+template: false
 config:
   default:
     name: 'Default pipeline'

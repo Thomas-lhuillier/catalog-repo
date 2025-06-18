@@ -13,7 +13,7 @@ version: '4'
 name: 'Debug stack'
 canonical: 'debug-stack'
 description: |
-  A dummy stack to help debugging when working on stack related development tasks.
+  A stack for devs to debug stacks and pipelines.
 keywords:
   - 'debug'
   - 'dummy'
@@ -22,6 +22,7 @@ keywords:
   - 'provider:scw'
 author: 'thomas_lhuillier'
 image: 'https://i.imgur.com/HnLTLxK.png'
+template: false
 technologies:
   - technology: cycloid
     version: n/a

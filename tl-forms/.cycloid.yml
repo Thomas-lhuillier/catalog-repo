@@ -1,13 +1,12 @@
 # Use the latest version 2 of the Cycloid stack engine.
 version: 4
-name: tl-forms
+name: Debug forms
 canonical: tl-forms
 author: 'thomas_lhuillier'
 # Fill in the stack details.
-description: 'The bare minimum files to build your stack from scratch.'
+description: 'Renders a wide variety of forms widgets and options.'
 image: https://i.imgur.com/UdU5CKY.png
 template: false
-status: 'public'
 # Add use cases to the stack.
 # See: https://docs.cycloid.io/manage/pipeline/multi-use-case.html#multiple-use-case
 config:
