@@ -1,22 +1,22 @@
 # Example on how to use Terraform outputs https://developer.hashicorp.com/terraform/language/values/outputs
 output "vpc_id" {
   description = "ID of the VPC"
-  value       = module.fake.fakewebservices_vpc.primary_vpc.id
+  value       = module.fake.vpc_id
 }
 
 output "lb_id" {
   description = "ID of the load balancer"
-  value       = module.fake.fakewebservices_load_balancer.primary_lb.id
+  value       = module.fake.lb_id
 }
 
 output "server_ids" {
   description = "List of ID of servers"
-  value       = module.fake.fakewebservices_server.servers.*.id
+  value       = module.fake.server_ids
 }
 
 output "db_id" {
   description = "ID of the database"
-  value       = module.fake.fakewebservices_database.prod_db.id
+  value       = module.fake.db_id
   sensitive   = true
 }
 
