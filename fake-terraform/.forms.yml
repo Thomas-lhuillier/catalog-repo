@@ -32,3 +32,9 @@ use_cases:
         type: string
         widget: simple_text
         default:
+      - name: TFC hostname
+        description: The hostname to access TFC
+        key: provider_hostname
+        type: string
+        widget: simple_text
+        default:

@@ -7,3 +7,8 @@ variable "provider_token" {
   type = string
   sensitive = true
 }
+
+variable "provider_hostname" {
+  type = string
+  sensitive = true
+}
