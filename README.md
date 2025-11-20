@@ -1,1 +1,1 @@
-Personal catalog repository with debug stacks.
+Personal catalog repository with debug stacks
