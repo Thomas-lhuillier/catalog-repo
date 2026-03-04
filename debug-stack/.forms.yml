@@ -137,21 +137,41 @@ use_cases:
               key: "text_area_raw"
               widget: "text_area"
               type: "raw"
-            - name: "cy_inventory_resource"
-              description: "Select a resource attribute from the inventory and link the value to this asset"
-              key: "cy_inventory_resource_var"
-              type: "string"
-              widget: "cy_inventory_resource"
-              widget_config:
-                attribute: "id"
-                filters:
-                  attributes: 'tags.env[eq]=infra'
-                  type: "aws_vpc"
             - name: "cy_cred"
               description: "A cycloid credential"
               key: "cy_cred_var"
               widget: "cy_cred"
               type: "string"
+          - name: Inventory resource
+            technologies: [pipeline]
+            vars:
+            - name: "Any resource"
+              description: "Basic widget config matching anything from the inventory."
+              key: "cy_inventory_resource_var"
+              type: "string"
+              widget: "cy_inventory_resource"
+              widget_config:
+                attribute: "id"
+            - name: "Fake server"
+              description: "Matching resources with `provider: fakewebservices` and `type: fakewebservices_server`."
+              key: fake_server
+              type: "string"
+              widget: cy_inventory_resource
+              widget_config:
+                attribute: id
+                filters:
+                  provider: fakewebservices
+                  type: fakewebservices_server
+            - name: "Fake server multiple"
+              description: "Multiple selections matching resources with `provider: fakewebservices` and `type: fakewebservices_server`."
+              key: fake_server_multiple
+              type: "array"
+              widget: cy_inventory_resource
+              widget_config:
+                attribute: id
+                filters:
+                  provider: fakewebservices
+                  type: fakewebservices_server
           - name: mapped values
             technologies: [pipeline]
             vars:
